@@ -254,22 +254,25 @@ public class Player : Destructible
 
     public void ThrusterDisplay(bool hasSpeedBoost)
     {
-        float yPosition = -2.44f;
-        float yScale = 0.5f;
-
-        if (hasSpeedBoost == true)
+        if (_thruster != null)
         {
-            yPosition = -3.3f;
-            yScale = 1.0f;
-        }
-        else
-        {
-            yPosition = -2.5f;
-            yScale = 0.5f;
-        }
+            float yPosition = -2.44f;
+            float yScale = 0.5f;
 
-        _thruster.transform.localPosition = new Vector3(0.0f, yPosition, 0.0f);
-        _thruster.transform.localScale = new Vector3(0.33f, yScale, 0.5f);
+            if (hasSpeedBoost == true)
+            {
+                yPosition = -3.3f;
+                yScale = 1.0f;
+            }
+            else
+            {
+                yPosition = -2.5f;
+                yScale = 0.5f;
+            }
+
+            _thruster.transform.localPosition = new Vector3(0.0f, yPosition, 0.0f);
+            _thruster.transform.localScale = new Vector3(0.33f, yScale, 0.5f); 
+        }
     }
 
     public void ShowEngineFires(int playerLives)

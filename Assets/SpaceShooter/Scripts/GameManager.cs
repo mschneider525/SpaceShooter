@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
+        DestroyEverything();
         _uiManager.StartGame();
         gameOver = false;
         SpawnPlayer(GetGameMode());
@@ -95,4 +96,39 @@ public class GameManager : MonoBehaviour
         }
         _backgroundMusic.Play();
     }
+
+    public void DestroyEverything()
+    {
+        GameObject[] playerGameObjects = GameObject.FindGameObjectsWithTag("Player");
+        int numberOfPlayers = playerGameObjects.Length;
+        if (numberOfPlayers > 0)
+        {
+            foreach (GameObject player in playerGameObjects)
+            {
+                Destroy(player);
+            }
+        }
+
+        GameObject[] enemyGameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        int numberOfEnemies = enemyGameObjects.Length;
+        if (numberOfEnemies > 0)
+        {
+            foreach (GameObject enemy in enemyGameObjects)
+            {
+                Destroy(enemy);
+            }
+        }
+
+        GameObject[] powerUpGameObjects = GameObject.FindGameObjectsWithTag("PowerUp");
+        int numberOfPowerUps = powerUpGameObjects.Length;
+        if (numberOfPowerUps > 0)
+        {
+            foreach (GameObject powerUp in powerUpGameObjects)
+            {
+                Destroy(powerUp);
+            }
+        }
+    }
+
+    
 }

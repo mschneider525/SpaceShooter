@@ -47,7 +47,6 @@ public class UI_Manager : MonoBehaviour
 
     public void StartGame()
     {
-        DestroyAllEnemiesAndPowerUps();
         Reset_HUD();
 
         _playerLivesGameObject.SetActive(true);
@@ -207,29 +206,6 @@ public class UI_Manager : MonoBehaviour
         //UpdateInstructionText("Middle", "Press [Enter] to play again");
         UpdateInstructionText("Bottom", "<sprite=\"PS4_Outlined\" name=\"Circle\"> to return to the Main Menu");
         //UpdateInstructionText("Bottom", "Press [M] to return to the main Menu");
-    }
-
-    public void DestroyAllEnemiesAndPowerUps()
-    {
-        GameObject[] enemyGameObjects = GameObject.FindGameObjectsWithTag("Enemy");
-        int numberOfEnemies = enemyGameObjects.Length;
-        if (numberOfEnemies > 0)
-        {
-            foreach (GameObject enemy in enemyGameObjects)
-            {
-                Destroy(enemy);
-            } 
-        }
-
-        GameObject[] powerUpGameObjects = GameObject.FindGameObjectsWithTag("PowerUp");
-        int numberOfPowerUps = powerUpGameObjects.Length;
-        if (numberOfPowerUps > 0)
-        {
-            foreach (GameObject powerUp in powerUpGameObjects)
-            {
-                Destroy(powerUp);
-            } 
-        }
     }
 
     public void Reset_HUD()
