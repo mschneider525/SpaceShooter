@@ -72,12 +72,7 @@ public class UI_Manager : MonoBehaviour
     {
         StartCoroutine(GameOverInstructionText_Routine(2.0f));
     }
-
-    public void EndGame()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
+    
     public void UpdateLives(int currentLives)
     {
         playerlivesImage.sprite = playerLivesSprites[currentLives];

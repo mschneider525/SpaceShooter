@@ -13,7 +13,7 @@ public class PlayerAnimation : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _playerDesignation = this.transform.name;
+        _playerDesignation = this.gameObject.name;
     }
 
     // Update is called once per frame

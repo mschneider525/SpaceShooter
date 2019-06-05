@@ -7,9 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public bool gameOver = false;
 
-    public GameObject player = null;
-    public GameObject player1 = null;
-    public GameObject player2 = null;
+    [SerializeField]
+    private GameObject player = null;
+    [SerializeField]
+    private GameObject player1 = null;
+    [SerializeField]
+    private GameObject player2 = null;
 
     private UI_Manager _uiManager = null;
     private SpawnManager _spawnManager = null;
@@ -70,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        _uiManager.EndGame();
+        SceneManager.LoadScene("MainMenu");
     }
 
     public string GetGameMode()
