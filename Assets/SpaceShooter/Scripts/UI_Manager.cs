@@ -17,14 +17,32 @@ public class UI_Manager : MonoBehaviour
     private GameObject _tripleShotAmmoTextGameObject = null;
     [SerializeField]
     private GameObject _tripleShotAmmoDisplayGameObject = null;
+
+    [SerializeField]
+    private GameObject _playerTwoLivesGameObject = null;
+    [SerializeField]
+    private GameObject _shieldsTextTwoGameObject = null;
+    [SerializeField]
+    private GameObject _shieldsDisplayTwoGameObject = null;
+    [SerializeField]
+    private GameObject _tripleShotAmmoTextTwoGameObject = null;
+    [SerializeField]
+    private GameObject _tripleShotAmmoDisplayTwoGameObject = null;
+
     [SerializeField]
     private GameObject _scoreGameObject = null;
 
-    public Image playerlivesImage = null;
+    public Image playerLivesImage = null;
     public Sprite[] playerLivesSprites = new Sprite[4];
+
+    public Image playerTwoLivesImage = null;
+    public Sprite[] playerTwoLivesSprites = new Sprite[4];
 
     public Text shieldsDisplayText = null;
     public Text tripleShotAmmoDisplayText = null;
+
+    public Text shieldsDisplayTwoText = null;
+    public Text tripleShotAmmoDisplayTwoText = null;
 
     public Text scoreText = null;
     public int score = 0;
@@ -32,6 +50,12 @@ public class UI_Manager : MonoBehaviour
     public TextMeshProUGUI instructionsTop = null;
     public TextMeshProUGUI instructionsMiddle = null;
     public TextMeshProUGUI instructionsBottom = null;
+
+    public TextMeshProUGUI instructionsTopLeft = null;
+    public TextMeshProUGUI instructionsMiddleLeft = null;
+
+    public TextMeshProUGUI instructionsTopRight = null;
+    public TextMeshProUGUI instructionsMiddleRight = null;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +99,7 @@ public class UI_Manager : MonoBehaviour
     
     public void UpdateLives(int currentLives)
     {
-        playerlivesImage.sprite = playerLivesSprites[currentLives];
+        playerLivesImage.sprite = playerLivesSprites[currentLives];
     }
 
     public void UpdateShieldsText(int shieldLevel)

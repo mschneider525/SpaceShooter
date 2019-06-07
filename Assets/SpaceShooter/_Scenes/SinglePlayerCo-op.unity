@@ -304,7 +304,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1911109150}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1378,7 +1378,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1911109150}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1690,7 +1690,7 @@ RectTransform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 1911109150}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1840,7 +1840,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1911109150}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2307,7 +2307,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1911109150}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2666,7 +2666,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1911109150}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3020,7 +3020,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1911109150}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -3099,7 +3099,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1911109150}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3547,14 +3547,14 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1104763288}
-  - {fileID: 918651867}
   - {fileID: 1198407771}
-  - {fileID: 1684271393}
   - {fileID: 633593665}
-  - {fileID: 244582815}
   - {fileID: 1732307336}
-  - {fileID: 1063827168}
   - {fileID: 1399193224}
+  - {fileID: 918651867}
+  - {fileID: 1684271393}
+  - {fileID: 244582815}
+  - {fileID: 1063827168}
   - {fileID: 1942469718}
   - {fileID: 1804062142}
   - {fileID: 558673725}
@@ -3589,20 +3589,37 @@ MonoBehaviour:
   _shieldsDisplayGameObject: {fileID: 633593662}
   _tripleShotAmmoTextGameObject: {fileID: 1732307335}
   _tripleShotAmmoDisplayGameObject: {fileID: 1399193221}
+  _playerTwoLivesGameObject: {fileID: 918651866}
+  _shieldsTextTwoGameObject: {fileID: 1684271392}
+  _shieldsDisplayTwoGameObject: {fileID: 244582814}
+  _tripleShotAmmoTextTwoGameObject: {fileID: 1063827167}
+  _tripleShotAmmoDisplayTwoGameObject: {fileID: 1942469717}
   _scoreGameObject: {fileID: 1804062141}
-  playerlivesImage: {fileID: 1104763289}
+  playerLivesImage: {fileID: 1104763289}
   playerLivesSprites:
+  - {fileID: 21300000, guid: ba53e111f0125654cabfd4eefaf3a657, type: 3}
+  - {fileID: 21300000, guid: 80fba5ece7697c44eacc036539c1b552, type: 3}
+  - {fileID: 21300000, guid: 482c8e4c0346b704aa5f1760c3c989d5, type: 3}
+  - {fileID: 21300000, guid: 9fe6f40efddf0b64fb68a3382b14a4db, type: 3}
+  playerTwoLivesImage: {fileID: 918651868}
+  playerTwoLivesSprites:
   - {fileID: 21300000, guid: ba53e111f0125654cabfd4eefaf3a657, type: 3}
   - {fileID: 21300000, guid: 80fba5ece7697c44eacc036539c1b552, type: 3}
   - {fileID: 21300000, guid: 482c8e4c0346b704aa5f1760c3c989d5, type: 3}
   - {fileID: 21300000, guid: 9fe6f40efddf0b64fb68a3382b14a4db, type: 3}
   shieldsDisplayText: {fileID: 633593663}
   tripleShotAmmoDisplayText: {fileID: 1399193222}
+  shieldsDisplayTwoText: {fileID: 244582816}
+  tripleShotAmmoDisplayTwoText: {fileID: 1942469719}
   scoreText: {fileID: 1804062143}
   score: 0
   instructionsTop: {fileID: 558673726}
   instructionsMiddle: {fileID: 190031209}
   instructionsBottom: {fileID: 1635279927}
+  instructionsTopLeft: {fileID: 1171337626}
+  instructionsMiddleLeft: {fileID: 412874617}
+  instructionsTopRight: {fileID: 1360644701}
+  instructionsMiddleRight: {fileID: 2138279488}
 --- !u!1 &1942469717
 GameObject:
   m_ObjectHideFlags: 0

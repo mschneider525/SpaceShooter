@@ -1301,7 +1301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 47.445, y: -26}
+  m_AnchoredPosition: {x: 47.444946, y: -26}
   m_SizeDelta: {x: 128, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104763289
@@ -2175,21 +2175,37 @@ MonoBehaviour:
   _shieldsDisplayGameObject: {fileID: 633593662}
   _tripleShotAmmoTextGameObject: {fileID: 1732307335}
   _tripleShotAmmoDisplayGameObject: {fileID: 1399193221}
+  _playerTwoLivesGameObject: {fileID: 0}
+  _shieldsTextTwoGameObject: {fileID: 0}
+  _shieldsDisplayTwoGameObject: {fileID: 0}
+  _tripleShotAmmoTextTwoGameObject: {fileID: 0}
+  _tripleShotAmmoDisplayTwoGameObject: {fileID: 0}
   _scoreGameObject: {fileID: 1804062141}
-  _mainMenuGameObject: {fileID: 0}
-  playerlivesImage: {fileID: 1104763289}
+  playerLivesImage: {fileID: 1104763289}
   playerLivesSprites:
   - {fileID: 21300000, guid: ba53e111f0125654cabfd4eefaf3a657, type: 3}
   - {fileID: 21300000, guid: 80fba5ece7697c44eacc036539c1b552, type: 3}
   - {fileID: 21300000, guid: 482c8e4c0346b704aa5f1760c3c989d5, type: 3}
   - {fileID: 21300000, guid: 9fe6f40efddf0b64fb68a3382b14a4db, type: 3}
+  playerTwoLivesImage: {fileID: 0}
+  playerTwoLivesSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   shieldsDisplayText: {fileID: 633593663}
   tripleShotAmmoDisplayText: {fileID: 1399193222}
+  shieldsDisplayTwoText: {fileID: 0}
+  tripleShotAmmoDisplayTwoText: {fileID: 0}
   scoreText: {fileID: 1804062143}
   score: 0
   instructionsTop: {fileID: 558673726}
   instructionsMiddle: {fileID: 190031209}
   instructionsBottom: {fileID: 1635279927}
+  instructionsTopLeft: {fileID: 0}
+  instructionsMiddleLeft: {fileID: 0}
+  instructionsTopRight: {fileID: 0}
+  instructionsMiddleRight: {fileID: 0}
 --- !u!1 &2068751650
 GameObject:
   m_ObjectHideFlags: 0
