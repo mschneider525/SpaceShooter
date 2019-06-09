@@ -49,7 +49,6 @@ public class Player : Destructible
 
     private GameManager _gameManager = null;
     private UI_Manager _uiManager = null;
-    private AudioSource _backgroundMusic = null;
 
 
     // Start is called before the first frame update
@@ -57,7 +56,6 @@ public class Player : Destructible
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _uiManager = GameObject.Find("UI").GetComponent<UI_Manager>();
-        _backgroundMusic = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
         _playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
         _thruster = GameObject.Find("Thruster");
 
@@ -216,8 +214,6 @@ public class Player : Destructible
         {
             Destroy(this.gameObject);
             ObjectExplosion(_playerExplosionPrefab);
-            _backgroundMusic.Stop();
-            _gameManager.GameOver();
         }
     }
 

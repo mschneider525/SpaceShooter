@@ -15,6 +15,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject player2 = null;
 
+    [SerializeField]
+    private Player _playerScript = null;
+    [SerializeField]
+    private Player _playerOneScript = null;
+    [SerializeField]
+    private Player _playerTwoScript = null;
+
     private UI_Manager _uiManager = null;
     private SpawnManager _spawnManager = null;
     private AudioSource _backgroundMusic = null;
@@ -56,6 +63,21 @@ public class GameManager : MonoBehaviour
             {
                 StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
             }
+
+            if (gameMode == "SinglePlayer")
+            {
+                if (_playerScript.playerLives == 0)
+                {
+                    GameOver();
+                }
+            }
+            if (gameMode == "SinglePlayerCo-op")
+            {
+                if (_playerOneScript.playerLives == 0 && _playerTwoScript.playerLives == 0)
+                {
+                    GameOver();
+                }
+            }
         }
     }
 
@@ -71,6 +93,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOver = true;
+        _backgroundMusic.Stop();
         _uiManager.GameOver();
     }
 
@@ -84,11 +107,14 @@ public class GameManager : MonoBehaviour
         if (gameMode == "SinglePlayer")
         {
             Instantiate(player);
+            _playerScript = GameObject.Find("Player(Clone)").GetComponent<Player>();
         }
         if (gameMode == "SinglePlayerCo-op")
         {
             Instantiate(player1);
+            _playerOneScript = GameObject.Find("Player1(Clone)").GetComponent<Player>();
             Instantiate(player2);
+            _playerTwoScript = GameObject.Find("Player2(Clone)").GetComponent<Player>();
         }
         _backgroundMusic.Play();
     }
