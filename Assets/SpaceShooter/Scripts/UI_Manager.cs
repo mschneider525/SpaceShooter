@@ -7,31 +7,6 @@ using UnityEngine.UI;
 
 public class UI_Manager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _playerLivesGameObject = null;
-    [SerializeField]
-    private GameObject _shieldsTextGameObject = null;
-    [SerializeField]
-    private GameObject _shieldsDisplayGameObject = null;
-    [SerializeField]
-    private GameObject _tripleShotAmmoTextGameObject = null;
-    [SerializeField]
-    private GameObject _tripleShotAmmoDisplayGameObject = null;
-
-    [SerializeField]
-    private GameObject _playerTwoLivesGameObject = null;
-    [SerializeField]
-    private GameObject _shieldsTextTwoGameObject = null;
-    [SerializeField]
-    private GameObject _shieldsDisplayTwoGameObject = null;
-    [SerializeField]
-    private GameObject _tripleShotAmmoTextTwoGameObject = null;
-    [SerializeField]
-    private GameObject _tripleShotAmmoDisplayTwoGameObject = null;
-
-    [SerializeField]
-    private GameObject _scoreGameObject = null;
-
     public Image playerLivesImage = null;
     public Sprite[] playerLivesSprites = new Sprite[4];
 
@@ -73,13 +48,6 @@ public class UI_Manager : MonoBehaviour
     {
         Reset_HUD(gameMode);
 
-        _playerLivesGameObject.SetActive(true);
-        _shieldsTextGameObject.SetActive(true);
-        _shieldsDisplayGameObject.SetActive(true);
-        _tripleShotAmmoTextGameObject.SetActive(true);
-        _tripleShotAmmoDisplayGameObject.SetActive(true);
-        _scoreGameObject.SetActive(true);
-
         /*-----For Keyboard and Mouse-----*/
         //instructionsTop.fontSize = 15;
         //instructionsMiddle.fontSize = 15;
@@ -89,6 +57,9 @@ public class UI_Manager : MonoBehaviour
         //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "Use [W][A][S][D] or [Arrow Keys] to move"));
         StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
         //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "Use [Left Mouse] or [Space Bar] to shoot"));
+
+        //SinglePlayerCo-op Instructions
+
         UpdateInstructionText("Bottom", "");
     }
 
@@ -229,8 +200,20 @@ public class UI_Manager : MonoBehaviour
                     instructionsTop.fontSize = 20;
                     //instructionsTop.fontSize = 15;
                 break;
+            case "TopLeft":
+
+                break;
+            case "TopRight":
+
+                break;
             case "Middle":
                 instructionsMiddle.text = instructionText;
+                break;
+            case "Middle Left":
+
+                break;
+            case "Middle Right":
+
                 break;
             case "Bottom":
                 instructionsBottom.text = instructionText;
@@ -246,8 +229,20 @@ public class UI_Manager : MonoBehaviour
             case "Top":
                 instructionsTop.text = "";
                 break;
+            case "TopLeft":
+
+                break;
+            case "TopRight":
+
+                break;
             case "Middle":
                 instructionsMiddle.text = "";
+                break;
+            case "Middle Left":
+
+                break;
+            case "Middle Right":
+
                 break;
             case "Bottom":
                 instructionsBottom.text = "";
