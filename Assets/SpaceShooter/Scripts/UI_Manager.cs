@@ -69,9 +69,9 @@ public class UI_Manager : MonoBehaviour
         
     }
 
-    public void StartGame()
+    public void StartGame(string gameMode)
     {
-        Reset_HUD();
+        Reset_HUD(gameMode);
 
         _playerLivesGameObject.SetActive(true);
         _shieldsTextGameObject.SetActive(true);
@@ -97,9 +97,16 @@ public class UI_Manager : MonoBehaviour
         StartCoroutine(GameOverInstructionText_Routine(2.0f));
     }
     
-    public void UpdateLives(int currentLives)
+    public void UpdateLives(string playerDesignation, int currentLives)
     {
-        playerLivesImage.sprite = playerLivesSprites[currentLives];
+        if (playerDesignation == "Player" || playerDesignation == "Player1")
+        {
+            playerLivesImage.sprite = playerLivesSprites[currentLives];
+        }
+        if (playerDesignation == "Player2")
+        {
+            playerTwoLivesImage.sprite = playerTwoLivesSprites[currentLives];
+        }
     }
 
     public void UpdateShieldsText(int shieldLevel)
@@ -227,11 +234,26 @@ public class UI_Manager : MonoBehaviour
         //UpdateInstructionText("Bottom", "Press [M] to return to the main Menu");
     }
 
-    public void Reset_HUD()
+    public void Reset_HUD(string gameMode)
     {
-        UpdateLives(3);
-        UpdateShieldsText(0);
-        UpdateTripleShotAmmoText(0);
+
+        if (gameMode == "SinglePlayer")
+        {
+            UpdateLives("Player", 3);
+            UpdateShieldsText(0);
+            UpdateTripleShotAmmoText(0); 
+        }
+        if (gameMode == "SinglePlayerCo-op")
+        {
+            UpdateLives("Player1", 3);
+            UpdateShieldsText(0);
+            UpdateTripleShotAmmoText(0);
+
+            UpdateLives("Player2", 3);
+            //UpdateShieldsText(0);
+            //UpdateTripleShotAmmoText(0);
+        }
+
         UpdateScoreText(true);
     }
 }

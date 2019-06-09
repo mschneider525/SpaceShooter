@@ -61,12 +61,12 @@ public class Player : Destructible
         _playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
         _thruster = GameObject.Find("Thruster");
 
+        SetPlayerStartingPositionAndDesignation(_gameManager.gameMode);
+
         if (_uiManager != null)
         {
-            _uiManager.UpdateLives(playerLives);
+            _uiManager.UpdateLives(playerDesignation, playerLives);
         }
-
-        SetPlayerStartingPositionAndDesignation(_gameManager.GetGameMode());
     }
 
     // Update is called once per frame
@@ -208,7 +208,7 @@ public class Player : Destructible
 
         playerLives = playerLives - 1;
         StartCoroutine(DamageColorChange_Routine(this.gameObject));
-        _uiManager.UpdateLives(playerLives);
+        _uiManager.UpdateLives(playerDesignation, playerLives);
 
         ShowEngineFires(playerLives);
 

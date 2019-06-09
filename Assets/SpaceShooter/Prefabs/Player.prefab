@@ -298,6 +298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c6cffe605066004aa3c035f615ff02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLives: 3
+  tripleShotAmmo: 0
+  hasSpeedBoost: 0
+  shieldLevel: 0
+  playerDesignation: Player
   _speed: 7
   _upperPlayerBoundary: 4.2
   _lowerPlayerBoundary: -4.2
@@ -317,10 +322,6 @@ MonoBehaviour:
   _coolDownTime: 0.25
   _speedBoostActiveTime: 10
   _speedBoostEndTime: 0
-  playerLives: 3
-  tripleShotAmmo: 0
-  hasSpeedBoost: 0
-  shieldLevel: 0
 --- !u!61 &4605409289499500551
 BoxCollider2D:
   m_ObjectHideFlags: 0

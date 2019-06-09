@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool gameOver = false;
+    public string gameMode = "";
 
     [SerializeField]
     private GameObject player = null;
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour
         _uiManager = GameObject.Find("UI").GetComponent<UI_Manager>();
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         _backgroundMusic = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+
+        gameMode = SceneManager.GetActiveScene().name;
 
         StartGame();
     }
@@ -59,9 +62,9 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         DestroyEverything();
-        _uiManager.StartGame();
+        SpawnPlayer(gameMode);
         gameOver = false;
-        SpawnPlayer(GetGameMode());
+        _uiManager.StartGame(gameMode);
         _spawnManager.spawnEnemy = true;
     }
 
@@ -74,16 +77,6 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-
-    public string GetGameMode()
-    {
-        string gameMode = "";
-
-        Scene currentScene = SceneManager.GetActiveScene();
-        gameMode = currentScene.name;
-
-        return gameMode;
     }
 
     public void SpawnPlayer(string gameMode)

@@ -33,7 +33,6 @@ public class Enemy : Destructible
 
         _enemySpriteRenderer = this.GetComponent<SpriteRenderer>();
 
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _uiManager = GameObject.Find("UI").GetComponent<UI_Manager>();
     }
 
@@ -76,6 +75,8 @@ public class Enemy : Destructible
         if (other.tag == "Player")
         {
             DestroyEnemy();
+
+            _player = other.GetComponent<Player>();
             if (_player != null)
             {
                 _player.Damage();
