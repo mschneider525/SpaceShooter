@@ -44,9 +44,6 @@ public class Player : Destructible
     [SerializeField]
     private float _speedBoostEndTime = 0.0f;
 
-    private SpriteRenderer _playerSpriteRenderer = null;
-    private SpriteRenderer _shieldSpriteRenderer = null;
-
     private GameManager _gameManager = null;
     private UI_Manager _uiManager = null;
 
@@ -56,8 +53,6 @@ public class Player : Destructible
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _uiManager = GameObject.Find("UI").GetComponent<UI_Manager>();
-        _playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
-        _thruster = GameObject.Find("Thruster");
 
         SetPlayerStartingPositionAndDesignation(_gameManager.gameMode);
 
@@ -192,7 +187,6 @@ public class Player : Destructible
         {
             shieldLevel = shieldLevel - 1;
             
-            _shieldSpriteRenderer = GameObject.Find("Shield").GetComponent<SpriteRenderer>();
             StartCoroutine(DamageColorChange_Routine(_shield));
             _uiManager.UpdateShieldsText(shieldLevel);
 
@@ -250,25 +244,22 @@ public class Player : Destructible
 
     public void ThrusterDisplay(bool hasSpeedBoost)
     {
-        if (_thruster != null)
+        float yPosition = -2.44f;
+        float yScale = 0.5f;
+
+        if (hasSpeedBoost == true)
         {
-            float yPosition = -2.44f;
-            float yScale = 0.5f;
-
-            if (hasSpeedBoost == true)
-            {
-                yPosition = -3.3f;
-                yScale = 1.0f;
-            }
-            else
-            {
-                yPosition = -2.5f;
-                yScale = 0.5f;
-            }
-
-            _thruster.transform.localPosition = new Vector3(0.0f, yPosition, 0.0f);
-            _thruster.transform.localScale = new Vector3(0.33f, yScale, 0.5f); 
+            yPosition = -3.3f;
+            yScale = 1.0f;
         }
+        else
+        {
+            yPosition = -2.5f;
+            yScale = 0.5f;
+        }
+
+        _thruster.transform.localPosition = new Vector3(0.0f, yPosition, 0.0f);
+        _thruster.transform.localScale = new Vector3(0.33f, yScale, 0.5f);
     }
 
     public void ShowEngineFires(int playerLives)
