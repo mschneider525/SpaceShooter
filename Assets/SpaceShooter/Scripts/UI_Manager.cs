@@ -53,12 +53,26 @@ public class UI_Manager : MonoBehaviour
         //instructionsMiddle.fontSize = 15;
         //instructionsBottom.fontSize = 15;
 
-        StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
-        //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "Use [W][A][S][D] or [Arrow Keys] to move"));
-        StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
-        //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "Use [Left Mouse] or [Space Bar] to shoot"));
+        if (gameMode == "SinglePlayer")
+        {
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
+            //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "Use [W][A][S][D] or [Arrow Keys] to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
+            //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "Use [Left Mouse] or [Space Bar] to shoot"));
 
+        }
         //SinglePlayerCo-op Instructions
+        if (gameMode == "SinglePlayerCo-op")
+        {
+            UpdateInstructionText("Top", "");
+            UpdateInstructionText("Middle", "");
+
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopLeft", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleLeft", "<sprite=\"PS4_Outlined\" name=\"L2\"> to shoot"));
+
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "<sprite=\"PS4_Outlined\" name=\"JS Right\"> to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
+        }
 
         UpdateInstructionText("Bottom", "");
     }
@@ -201,19 +215,19 @@ public class UI_Manager : MonoBehaviour
                     //instructionsTop.fontSize = 15;
                 break;
             case "TopLeft":
-
+                instructionsTopLeft.text = instructionText;
                 break;
             case "TopRight":
-
+                instructionsTopRight.text = instructionText;
                 break;
             case "Middle":
                 instructionsMiddle.text = instructionText;
                 break;
-            case "Middle Left":
-
+            case "MiddleLeft":
+                instructionsMiddleLeft.text = instructionText;
                 break;
-            case "Middle Right":
-
+            case "MiddleRight":
+                instructionsMiddleRight.text = instructionText;
                 break;
             case "Bottom":
                 instructionsBottom.text = instructionText;
@@ -230,19 +244,19 @@ public class UI_Manager : MonoBehaviour
                 instructionsTop.text = "";
                 break;
             case "TopLeft":
-
+                instructionsTopLeft.text = "";
                 break;
             case "TopRight":
-
+                instructionsTopRight.text = "";
                 break;
             case "Middle":
                 instructionsMiddle.text = "";
                 break;
-            case "Middle Left":
-
+            case "MiddleLeft":
+                instructionsMiddleLeft.text = "";
                 break;
-            case "Middle Right":
-
+            case "MiddleRight":
+                instructionsMiddleRight.text = "";
                 break;
             case "Bottom":
                 instructionsBottom.text = "";

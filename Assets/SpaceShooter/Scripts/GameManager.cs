@@ -55,17 +55,17 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (_uiManager.instructionsTop.text != "" && (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f))
-            {
-                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
-            }
-            if (_uiManager.instructionsMiddle.text != "" && (Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
-            {
-                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
-            }
-
             if (gameMode == "SinglePlayer")
             {
+                if (_uiManager.instructionsTop.text != "" && (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f))
+                {
+                    StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
+                }
+                if (_uiManager.instructionsMiddle.text != "" && (Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+                {
+                    StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
+                }
+
                 if (_playerScript.playerLives == 0)
                 {
                     GameOver();
@@ -73,6 +73,23 @@ public class GameManager : MonoBehaviour
             }
             if (gameMode == "SinglePlayerCo-op")
             {
+                if (_uiManager.instructionsTopLeft.text != "" && (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f))
+                {
+                    StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "TopLeft", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
+                }
+                if (_uiManager.instructionsMiddleLeft.text != "" && Input.GetButtonDown("L2"))
+                {
+                    StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "MiddleLeft", "<sprite=\"PS4_Outlined\" name=\"L2\"> to shoot"));
+                }
+                if (_uiManager.instructionsTopRight.text != "" && (Input.GetAxis("Horizontal2") != 0.0f || Input.GetAxis("Vertical2") != 0.0f))
+                {
+                    StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "TopRight", "<sprite=\"PS4_Outlined\" name=\"JS Right\"> to move"));
+                }
+                if (_uiManager.instructionsMiddleRight.text != "" && Input.GetButtonDown("R2"))
+                {
+                    StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
+                }
+
                 if (_playerOneScript.playerLives == 0 && _playerTwoScript.playerLives == 0)
                 {
                     GameOver();
