@@ -170,7 +170,7 @@ public class Player : Destructible
             {
                 Instantiate(_tripleShotPrefab, this.transform.position, Quaternion.identity);
                 tripleShotAmmo = tripleShotAmmo - 1;
-                _uiManager.UpdateTripleShotAmmoText(tripleShotAmmo);
+                _uiManager.UpdateTripleShotAmmoText(playerDesignation, tripleShotAmmo);
             }
             else
             {
@@ -188,7 +188,7 @@ public class Player : Destructible
             shieldLevel = shieldLevel - 1;
             
             StartCoroutine(DamageColorChange_Routine(_shield));
-            _uiManager.UpdateShieldsText(shieldLevel);
+            _uiManager.UpdateShieldsText(playerDesignation, shieldLevel);
 
             if (shieldLevel == 0)
             {
@@ -217,7 +217,7 @@ public class Player : Destructible
         {
             case "TripleShot":
                 tripleShotAmmo = 15;
-                _uiManager.UpdateTripleShotAmmoText(tripleShotAmmo);
+                _uiManager.UpdateTripleShotAmmoText(playerDesignation, tripleShotAmmo);
                 break;
             case "SpeedBoost":
                 hasSpeedBoost = true;
@@ -227,7 +227,7 @@ public class Player : Destructible
             case "Shield":
                 shieldLevel = 3;
                 _shield.SetActive(true);
-                _uiManager.UpdateShieldsText(shieldLevel);
+                _uiManager.UpdateShieldsText(playerDesignation, shieldLevel);
                 break;
             default:
 

@@ -109,33 +109,61 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
-    public void UpdateShieldsText(int shieldLevel)
+    public void UpdateShieldsText(string playerDesignation, int shieldLevel)
     {
-        switch (shieldLevel)
+        if (playerDesignation == "Player" || playerDesignation == "Player1")
         {
-            case 3:
-                shieldsDisplayText.color = new Color(0.3764706f, 0.7607843f, 0.9372549f, 1.0f); //Blue-ish
-                shieldsDisplayText.text = ")))";
-                break;
-            case 2:
-                shieldsDisplayText.color = new Color(0.8972915f, 1.0f, 0.3632075f, 1.0f); //Yellow-ish
-                shieldsDisplayText.text = "))";
-                break;
-            case 1:
-                shieldsDisplayText.color = new Color(1.0f, 0.2783019f, 0.2783019f, 1.0f); //Red-ish
-                shieldsDisplayText.text = ")";
-                break;
-            case 0:
-                shieldsDisplayText.color = Color.white;
-                shieldsDisplayText.text = "";
-                break;
-            default:
+            switch (shieldLevel)
+            {
+                case 3:
+                    shieldsDisplayText.color = new Color(0.3764706f, 0.7607843f, 0.9372549f, 1.0f); //Blue-ish
+                    shieldsDisplayText.text = ")))";
+                    break;
+                case 2:
+                    shieldsDisplayText.color = new Color(0.8972915f, 1.0f, 0.3632075f, 1.0f); //Yellow-ish
+                    shieldsDisplayText.text = "))";
+                    break;
+                case 1:
+                    shieldsDisplayText.color = new Color(1.0f, 0.2783019f, 0.2783019f, 1.0f); //Red-ish
+                    shieldsDisplayText.text = ")";
+                    break;
+                case 0:
+                    shieldsDisplayText.color = Color.white;
+                    shieldsDisplayText.text = "";
+                    break;
+                default:
 
-                break;
+                    break;
+            } 
+        }
+        if (playerDesignation == "Player2")
+        {
+            switch (shieldLevel)
+            {
+                case 3:
+                    shieldsDisplayTwoText.color = new Color(0.3764706f, 0.7607843f, 0.9372549f, 1.0f); //Blue-ish
+                    shieldsDisplayTwoText.text = ")))";
+                    break;
+                case 2:
+                    shieldsDisplayTwoText.color = new Color(0.8972915f, 1.0f, 0.3632075f, 1.0f); //Yellow-ish
+                    shieldsDisplayTwoText.text = "))";
+                    break;
+                case 1:
+                    shieldsDisplayTwoText.color = new Color(1.0f, 0.2783019f, 0.2783019f, 1.0f); //Red-ish
+                    shieldsDisplayTwoText.text = ")";
+                    break;
+                case 0:
+                    shieldsDisplayTwoText.color = Color.white;
+                    shieldsDisplayTwoText.text = "";
+                    break;
+                default:
+
+                    break;
+            }
         }
     }
 
-    public void UpdateTripleShotAmmoText(int tripleShotAmmo)
+    public void UpdateTripleShotAmmoText(string playerDesignation, int tripleShotAmmo)
     {
         string tripleShotLasers = "";
 
@@ -144,7 +172,14 @@ public class UI_Manager : MonoBehaviour
             tripleShotLasers += "|";
         }
 
-        tripleShotAmmoDisplayText.text = tripleShotLasers;
+        if (playerDesignation == "Player" || playerDesignation == "Player1")
+        {
+            tripleShotAmmoDisplayText.text = tripleShotLasers;
+        }
+        if (playerDesignation == "Player2")
+        {
+            tripleShotAmmoDisplayTwoText.text = tripleShotLasers;
+        }
     }
 
     public void UpdateScoreText(bool resetScore = false, bool hasTripleShot = false)
@@ -236,22 +271,29 @@ public class UI_Manager : MonoBehaviour
 
     public void Reset_HUD(string gameMode)
     {
+        string playerDesignation = "";
 
         if (gameMode == "SinglePlayer")
         {
-            UpdateLives("Player", 3);
-            UpdateShieldsText(0);
-            UpdateTripleShotAmmoText(0); 
+            playerDesignation = "Player";
+
+            UpdateLives(playerDesignation, 3);
+            UpdateShieldsText(playerDesignation, 0);
+            UpdateTripleShotAmmoText(playerDesignation, 0); 
         }
         if (gameMode == "SinglePlayerCo-op")
         {
-            UpdateLives("Player1", 3);
-            UpdateShieldsText(0);
-            UpdateTripleShotAmmoText(0);
+            playerDesignation = "Player1";
 
-            UpdateLives("Player2", 3);
-            //UpdateShieldsText(0);
-            //UpdateTripleShotAmmoText(0);
+            UpdateLives(playerDesignation, 3);
+            UpdateShieldsText(playerDesignation, 0);
+            UpdateTripleShotAmmoText(playerDesignation, 0);
+
+            playerDesignation = "Player2";
+
+            UpdateLives(playerDesignation, 3);
+            UpdateShieldsText(playerDesignation, 0);
+            UpdateTripleShotAmmoText(playerDesignation, 0);
         }
 
         UpdateScoreText(true);
