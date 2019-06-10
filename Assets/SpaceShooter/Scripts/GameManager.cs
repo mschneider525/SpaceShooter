@@ -7,13 +7,17 @@ public class GameManager : MonoBehaviour
 {
     public bool gameOver = false;
     public string gameMode = "";
+    public bool gamePaused = false;
 
     [SerializeField]
-    private GameObject player = null;
+    private GameObject _player = null;
     [SerializeField]
-    private GameObject player1 = null;
+    private GameObject _player1 = null;
     [SerializeField]
-    private GameObject player2 = null;
+    private GameObject _player2 = null;
+
+    [SerializeField]
+    private GameObject _pauseMenuPanel = null;
 
     [SerializeField]
     private Player _playerScript = null;
@@ -55,6 +59,11 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            if (Input.GetButtonDown("Options"))
+            {
+                PauseGame();
+            }
+
             if (gameMode == "SinglePlayer")
             {
                 if (_uiManager.instructionsTop.text != "" && (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f))
@@ -107,6 +116,20 @@ public class GameManager : MonoBehaviour
         _spawnManager.spawnEnemy = true;
     }
 
+    public void PauseGame()
+    {
+        Time.timeScale = 0.0f;
+        _pauseMenuPanel.SetActive(true);
+        gamePaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1.0f;
+        _pauseMenuPanel.SetActive(false);
+        gamePaused = false;
+    }
+
     public void GameOver()
     {
         gameOver = true;
@@ -123,14 +146,14 @@ public class GameManager : MonoBehaviour
     {
         if (gameMode == "SinglePlayer")
         {
-            Instantiate(player);
+            Instantiate(_player);
             _playerScript = GameObject.Find("Player(Clone)").GetComponent<Player>();
         }
         if (gameMode == "SinglePlayerCo-op")
         {
-            Instantiate(player1);
+            Instantiate(_player1);
             _playerOneScript = GameObject.Find("Player1(Clone)").GetComponent<Player>();
-            Instantiate(player2);
+            Instantiate(_player2);
             _playerTwoScript = GameObject.Find("Player2(Clone)").GetComponent<Player>();
         }
         _backgroundMusic.Play();
