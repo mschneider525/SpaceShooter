@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public bool gameOver = false;
     public string gameMode = "";
-    public bool gamePaused = false;
 
     [SerializeField]
     private GameObject _player = null;
@@ -120,14 +119,12 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         _pauseMenuPanel.SetActive(true);
-        gamePaused = true;
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1.0f;
         _pauseMenuPanel.SetActive(false);
-        gamePaused = false;
     }
 
     public void GameOver()
