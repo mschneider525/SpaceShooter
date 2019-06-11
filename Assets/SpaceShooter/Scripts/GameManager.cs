@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public bool gameOver = false;
     public string gameMode = "";
+    public bool gamePaused = false;
 
     [SerializeField]
     private GameObject _player = null;
@@ -58,9 +59,17 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (Input.GetButtonDown("Options"))
+            if (gamePaused == false && Input.GetButtonDown("TouchPad"))
             {
                 PauseGame();
+            }
+            else if (gamePaused == true && (Input.GetButtonDown("TouchPad") || Input.GetButtonDown("Circle")))
+            {
+                ResumeGame();
+            }
+            else
+            {
+
             }
 
             if (gameMode == "SinglePlayer")
@@ -117,14 +126,16 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0.0f;
         _pauseMenuPanel.SetActive(true);
+        gamePaused = true;
+        Time.timeScale = 0.0f;
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1.0f;
         _pauseMenuPanel.SetActive(false);
+        gamePaused = false;
+        Time.timeScale = 1.0f;
     }
 
     public void GameOver()
@@ -137,6 +148,8 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         SceneManager.LoadScene("MainMenu");
+        gamePaused = false;
+        Time.timeScale = 1.0f;
     }
 
     public void SpawnPlayer(string gameMode)
