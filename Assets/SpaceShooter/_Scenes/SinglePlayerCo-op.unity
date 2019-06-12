@@ -2286,6 +2286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: 0
   gameMode: 
+  gamePaused: 0
   _player: {fileID: 4605409289499500544, guid: 61b9e13c83e132d48ba6b99f93b35502, type: 3}
   _player1: {fileID: 764331546, guid: 0a6a1e308b1a69b4190983f9e78f7526, type: 3}
   _player2: {fileID: 915039538, guid: fd74b7ee39e8d9148868910ac396a1f3, type: 3}
@@ -2293,6 +2294,7 @@ MonoBehaviour:
   _playerScript: {fileID: 0}
   _playerOneScript: {fileID: 0}
   _playerTwoScript: {fileID: 0}
+  _pauseMenuEventSystem: {fileID: 2104533322}
 --- !u!4 &917160781
 Transform:
   m_ObjectHideFlags: 0

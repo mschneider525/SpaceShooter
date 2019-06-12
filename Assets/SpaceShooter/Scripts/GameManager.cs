@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour
     private SpawnManager _spawnManager = null;
     private AudioSource _backgroundMusic = null;
 
+    [SerializeField]
+    private EventSystem _pauseMenuEventSystem = null;
 
     // Start is called before the first frame update
     void Start()
@@ -127,6 +130,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         _pauseMenuPanel.SetActive(true);
+        HighlightFirstSelectedGameObject();
         gamePaused = true;
         Time.timeScale = 0.0f;
     }
@@ -202,5 +206,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    private void HighlightFirstSelectedGameObject()
+    {
+        _pauseMenuEventSystem.SetSelectedGameObject(null);
+        _pauseMenuEventSystem.SetSelectedGameObject(_pauseMenuEventSystem.firstSelectedGameObject);
+    }
 }
