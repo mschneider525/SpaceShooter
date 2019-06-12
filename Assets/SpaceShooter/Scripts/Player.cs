@@ -221,7 +221,6 @@ public class Player : Destructible
                 break;
             case "SpeedBoost":
                 hasSpeedBoost = true;
-                //StartCoroutine(SpeedBoost_PowerDown_Routine());
                 _speedBoostEndTime = Time.time + _speedBoostActiveTime;
                 break;
             case "Shield":
@@ -233,13 +232,6 @@ public class Player : Destructible
 
                 break;
         }
-    }
-
-    public IEnumerator SpeedBoost_PowerDown_Routine()
-    {
-        yield return new WaitForSeconds(_speedBoostActiveTime);
-
-        hasSpeedBoost = false;
     }
 
     public void ThrusterDisplay(bool hasSpeedBoost)
