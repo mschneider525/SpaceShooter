@@ -68,6 +68,21 @@ public class Player : Destructible
         if (Time.time > _speedBoostEndTime)
         {
             hasSpeedBoost = false;
+
+            if (_gameManager.gamePaused == false)
+            {
+                if (_gameManager.gameMode == "SinglePlayer")
+                {
+                    _gameManager.SetTimeScaleAndFixedDeltaTime(1.0f);
+                }
+                if (_gameManager.gameMode == "SinglePlayerCo-op")
+                {
+                    if (_gameManager.playerOneScript.hasSpeedBoost == false && _gameManager.playerTwoScript.hasSpeedBoost == false)
+                    {
+                        _gameManager.SetTimeScaleAndFixedDeltaTime(1.0f);
+                    }
+                } 
+            }
         }
 
         ThrusterDisplay(hasSpeedBoost);
@@ -222,6 +237,7 @@ public class Player : Destructible
             case "SpeedBoost":
                 hasSpeedBoost = true;
                 _speedBoostEndTime = Time.time + _speedBoostActiveTime;
+                _gameManager.SetTimeScaleAndFixedDeltaTime(0.7f);
                 break;
             case "Shield":
                 shieldLevel = 3;

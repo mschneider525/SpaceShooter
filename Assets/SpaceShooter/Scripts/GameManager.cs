@@ -20,12 +20,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _pauseMenuPanel = null;
 
-    [SerializeField]
-    private Player _playerScript = null;
-    [SerializeField]
-    private Player _playerOneScript = null;
-    [SerializeField]
-    private Player _playerTwoScript = null;
+    public Player playerScript = null;
+    public Player playerOneScript = null;
+    public Player playerTwoScript = null;
 
     private UI_Manager _uiManager = null;
     private SpawnManager _spawnManager = null;
@@ -86,7 +83,7 @@ public class GameManager : MonoBehaviour
                     StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
                 }
 
-                if (_playerScript.playerLives == 0)
+                if (playerScript.playerLives == 0)
                 {
                     GameOver();
                 }
@@ -110,7 +107,7 @@ public class GameManager : MonoBehaviour
                     StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
                 }
 
-                if (_playerOneScript.playerLives == 0 && _playerTwoScript.playerLives == 0)
+                if (playerOneScript.playerLives == 0 && playerTwoScript.playerLives == 0)
                 {
                     GameOver();
                 }
@@ -145,7 +142,28 @@ public class GameManager : MonoBehaviour
         _backgroundMusic.Play();
         _pauseMenuPanel.SetActive(false);
         gamePaused = false;
-        Time.timeScale = 1.0f;
+        if (gameMode == "SinglePlayer")
+        {
+            if (playerScript.hasSpeedBoost == true)
+            {
+                SetTimeScaleAndFixedDeltaTime(0.7f);
+            }
+            else
+            {
+                SetTimeScaleAndFixedDeltaTime(1.0f);
+            }
+        }
+        if (gameMode == "SinglePlayerCo-op")
+        {
+            if (playerOneScript.hasSpeedBoost == true || playerTwoScript.hasSpeedBoost == true)
+            {
+                SetTimeScaleAndFixedDeltaTime(0.7f);
+            }
+            else
+            {
+                SetTimeScaleAndFixedDeltaTime(1.0f);
+            }
+        }
     }
 
     public void GameOver()
@@ -159,7 +177,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         gamePaused = false;
-        Time.timeScale = 1.0f;
+        SetTimeScaleAndFixedDeltaTime(1.0f);
     }
 
     public void SpawnPlayer(string gameMode)
@@ -167,14 +185,14 @@ public class GameManager : MonoBehaviour
         if (gameMode == "SinglePlayer")
         {
             Instantiate(_player);
-            _playerScript = GameObject.Find("Player(Clone)").GetComponent<Player>();
+            playerScript = GameObject.Find("Player(Clone)").GetComponent<Player>();
         }
         if (gameMode == "SinglePlayerCo-op")
         {
             Instantiate(_player1);
-            _playerOneScript = GameObject.Find("Player1(Clone)").GetComponent<Player>();
+            playerOneScript = GameObject.Find("Player1(Clone)").GetComponent<Player>();
             Instantiate(_player2);
-            _playerTwoScript = GameObject.Find("Player2(Clone)").GetComponent<Player>();
+            playerTwoScript = GameObject.Find("Player2(Clone)").GetComponent<Player>();
         }
         _backgroundMusic.Play();
     }
@@ -216,5 +234,11 @@ public class GameManager : MonoBehaviour
     {
         _pauseMenuEventSystem.SetSelectedGameObject(null);
         _pauseMenuEventSystem.SetSelectedGameObject(_pauseMenuEventSystem.firstSelectedGameObject);
+    }
+
+    public void SetTimeScaleAndFixedDeltaTime(float timeScale)
+    {
+        Time.timeScale = timeScale;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
     }
 }
