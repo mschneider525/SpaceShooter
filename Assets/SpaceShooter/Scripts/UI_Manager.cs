@@ -74,7 +74,7 @@ public class UI_Manager : MonoBehaviour
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
         }
 
-        UpdateInstructionText("Bottom", "");
+        StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"TouchPad\"> to pause"));
     }
 
     public void GameOver()

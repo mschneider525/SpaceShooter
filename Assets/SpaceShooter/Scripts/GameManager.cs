@@ -115,6 +115,10 @@ public class GameManager : MonoBehaviour
                     GameOver();
                 }
             }
+            if (_uiManager.instructionsBottom.text != "" && Input.GetButtonDown("TouchPad"))
+            {
+                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.1f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"TouchPad\"> to pause"));
+            }
         }
     }
 
