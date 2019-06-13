@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
+        _backgroundMusic.Stop();
         _pauseMenuPanel.SetActive(true);
         HighlightFirstSelectedGameObject();
         gamePaused = true;
@@ -141,6 +142,7 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        _backgroundMusic.Play();
         _pauseMenuPanel.SetActive(false);
         gamePaused = false;
         Time.timeScale = 1.0f;
