@@ -86,6 +86,7 @@ public class Player : Destructible
         }
 
         ThrusterDisplay(hasSpeedBoost);
+        _uiManager.UpdateSpeedBoostText(playerDesignation, _speedBoostEndTime);
 
         InvokePlayerInput(playerDesignation);
     }

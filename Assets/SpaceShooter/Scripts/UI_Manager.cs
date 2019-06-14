@@ -15,9 +15,11 @@ public class UI_Manager : MonoBehaviour
 
     public Text shieldsDisplayText = null;
     public Text tripleShotAmmoDisplayText = null;
+    public Text speedBoostDisplayText = null;
 
     public Text shieldsDisplayTwoText = null;
     public Text tripleShotAmmoDisplayTwoText = null;
+    public Text speedBoostDisplayTwoText = null;
 
     public Text scoreText = null;
     public int score = 0;
@@ -84,13 +86,16 @@ public class UI_Manager : MonoBehaviour
     
     public void UpdateLives(string playerDesignation, int currentLives)
     {
-        if (playerDesignation == "Player" || playerDesignation == "Player1")
+        if (currentLives >= 0)
         {
-            playerLivesImage.sprite = playerLivesSprites[currentLives];
-        }
-        if (playerDesignation == "Player2")
-        {
-            playerTwoLivesImage.sprite = playerTwoLivesSprites[currentLives];
+            if (playerDesignation == "Player" || playerDesignation == "Player1")
+            {
+                playerLivesImage.sprite = playerLivesSprites[currentLives];
+            }
+            if (playerDesignation == "Player2")
+            {
+                playerTwoLivesImage.sprite = playerTwoLivesSprites[currentLives];
+            } 
         }
     }
 
@@ -165,6 +170,28 @@ public class UI_Manager : MonoBehaviour
         {
             tripleShotAmmoDisplayTwoText.text = tripleShotLasers;
         }
+    }
+
+    public void UpdateSpeedBoostText(string playerDesignation, float speedBoostEndTime)
+    {
+        float speedBoostActiveTime = 0.0f;
+        string speedBoostActiveTimeText = "0.00";
+
+        if (speedBoostEndTime > Time.time)
+        {
+            speedBoostActiveTime = speedBoostEndTime - Time.time;
+            speedBoostActiveTimeText = speedBoostActiveTime.ToString("f2");
+        }
+
+        if (playerDesignation == "Player" || playerDesignation == "Player1")
+        {
+            speedBoostDisplayText.text = speedBoostActiveTimeText + "s";
+        }
+        if (playerDesignation == "Player2")
+        {
+            speedBoostDisplayTwoText.text = speedBoostActiveTimeText + "s";
+        }
+        
     }
 
     public void UpdateScoreText(bool resetScore = false, bool hasTripleShot = false)
@@ -288,7 +315,8 @@ public class UI_Manager : MonoBehaviour
 
             UpdateLives(playerDesignation, 3);
             UpdateShieldsText(playerDesignation, 0);
-            UpdateTripleShotAmmoText(playerDesignation, 0); 
+            UpdateTripleShotAmmoText(playerDesignation, 0);
+            UpdateSpeedBoostText(playerDesignation, 0.0f);
         }
         if (gameMode == "SinglePlayerCo-op")
         {
@@ -297,12 +325,14 @@ public class UI_Manager : MonoBehaviour
             UpdateLives(playerDesignation, 3);
             UpdateShieldsText(playerDesignation, 0);
             UpdateTripleShotAmmoText(playerDesignation, 0);
+            UpdateSpeedBoostText(playerDesignation, 0.0f);
 
             playerDesignation = "Player2";
 
             UpdateLives(playerDesignation, 3);
             UpdateShieldsText(playerDesignation, 0);
             UpdateTripleShotAmmoText(playerDesignation, 0);
+            UpdateSpeedBoostText(playerDesignation, 0.0f);
         }
 
         UpdateScoreText(true);
