@@ -26,7 +26,7 @@ public class UI_Manager : MonoBehaviour
 
     [SerializeField]
     private GameObject _explosionScorePrefab = null;
-    private float clearScoreTextTime = 0.0f; 
+    private float _clearScoreTextTime = 0.0f;
 
     public Text highScoreText = null;
     public int highScore = 0;
@@ -50,7 +50,11 @@ public class UI_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Time.time > _clearScoreTextTime && _clearScoreTextTime != 0.0f)
+        {
+            scoreText.text = "";
+            _clearScoreTextTime = 0.0f;
+        }
     }
 
     public void StartGame(string gameMode)
@@ -83,7 +87,7 @@ public class UI_Manager : MonoBehaviour
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
         }
 
-        StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"TouchPad\"> to pause"));
+        StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"TouchPad\"> to pause"));
     }
 
     public void GameOver()
@@ -201,16 +205,21 @@ public class UI_Manager : MonoBehaviour
         
     }
 
-    public void UpdateScoreText(bool resetScore = false, bool hasTripleShot = false)
+    public void UpdateScoreText(bool resetScore = false)
     {
         score += 100;
 
         if (resetScore == true)
         {
             score = 0;
+            scoreText.text = "Score: " + score;
+            return;
         }
 
-        scoreText.text = "Score: " + score;
+        if (scoreText.text != "")
+        {
+            scoreText.text = "Score: " + score; 
+        }
 
         UpdateHighScoreText();
     }
@@ -225,7 +234,12 @@ public class UI_Manager : MonoBehaviour
 
             highScoreText.text = "High Score: " + highScore;
 
+            if (scoreText.text != "")
+            {
+                ScoreExplosion(); 
+            }
 
+            _clearScoreTextTime = Time.time + 0.5f;
         }
     }
 
@@ -235,8 +249,8 @@ public class UI_Manager : MonoBehaviour
         {
             case "Top":
                 instructionsTop.text = instructionText;
-                if (instructionsTop.text == "GAME OVER")
-                    instructionsTop.fontSize = 32;
+                if (instructionsTop.text == "GAME OVER" || instructionsTop.text.Contains("NEW HIGH SCORE"))
+                    instructionsTop.fontSize = 24;
                 else
                     instructionsTop.fontSize = 20;
                     //instructionsTop.fontSize = 15;
@@ -321,7 +335,15 @@ public class UI_Manager : MonoBehaviour
     {
         yield return new WaitForSeconds(timeDelay);
 
-        UpdateInstructionText("Top", "GAME OVER");
+        if (scoreText.text != "")
+        {
+            UpdateInstructionText("Top", "GAME OVER"); 
+        }
+        else
+        {
+            UpdateInstructionText("Top", "NEW HIGH SCORE: " + highScore);
+        }
+
         UpdateInstructionText("Middle", "<sprite=\"PS4_Outlined\" name=\"Cross\"> to play again");
         //UpdateInstructionText("Middle", "Press [Enter] to play again");
         UpdateInstructionText("Bottom", "<sprite=\"PS4_Outlined\" name=\"Circle\"> to return to the Main Menu");
@@ -358,7 +380,24 @@ public class UI_Manager : MonoBehaviour
             UpdateSpeedBoostText(playerDesignation, 0.0f);
         }
 
-        UpdateHighScoreText();
         UpdateScoreText(true);
+    }
+
+    private void ScoreExplosion()
+    {
+        GameObject scoreExplosion0 = Instantiate(_explosionScorePrefab, new Vector3(-1.4f, 4.0f, 0.0f), Quaternion.identity);
+        Destroy(scoreExplosion0, 2.5f);
+
+        GameObject scoreExplosion1 = Instantiate(_explosionScorePrefab, new Vector3(-0.7f, 4.0f, 0.0f), Quaternion.identity);
+        Destroy(scoreExplosion1, 2.5f);
+
+        GameObject scoreExplosion2 = Instantiate(_explosionScorePrefab, new Vector3(0.0f, 4.0f, 0.0f), Quaternion.identity);
+        Destroy(scoreExplosion2, 2.5f);
+
+        GameObject scoreExplosion3 = Instantiate(_explosionScorePrefab, new Vector3(0.7f, 4.0f, 0.0f), Quaternion.identity);
+        Destroy(scoreExplosion3, 2.5f);
+
+        GameObject scoreExplosion4 = Instantiate(_explosionScorePrefab, new Vector3(1.4f, 4.0f, 0.0f), Quaternion.identity);
+        Destroy(scoreExplosion4, 2.5f);
     }
 }
