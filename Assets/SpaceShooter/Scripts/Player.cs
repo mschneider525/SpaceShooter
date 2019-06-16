@@ -27,7 +27,7 @@ public class Player : Destructible
     [SerializeField]
     private GameObject _tripleShotPrefab = null;
     [SerializeField]
-    private GameObject _playerExplosionPrefab = null;
+    private GameObject _explosionPlayerPrefab = null;
     [SerializeField]
     private GameObject _shield = null;
     [SerializeField]
@@ -223,7 +223,7 @@ public class Player : Destructible
         if (playerLives == 0)
         {
             Destroy(this.gameObject);
-            ObjectExplosion(_playerExplosionPrefab);
+            ObjectExplosion(_explosionPlayerPrefab);
         }
     }
 

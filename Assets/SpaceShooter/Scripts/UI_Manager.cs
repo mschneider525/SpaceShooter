@@ -24,6 +24,13 @@ public class UI_Manager : MonoBehaviour
     public Text scoreText = null;
     public int score = 0;
 
+    [SerializeField]
+    private GameObject _explosionScorePrefab = null;
+    private float clearScoreTextTime = 0.0f; 
+
+    public Text highScoreText = null;
+    public int highScore = 0;
+
     public TextMeshProUGUI instructionsTop = null;
     public TextMeshProUGUI instructionsMiddle = null;
     public TextMeshProUGUI instructionsBottom = null;
@@ -204,6 +211,22 @@ public class UI_Manager : MonoBehaviour
         }
 
         scoreText.text = "Score: " + score;
+
+        UpdateHighScoreText();
+    }
+
+    public void UpdateHighScoreText()
+    {
+        highScoreText.text = "High Score: " + highScore;
+
+        if (score >= highScore)
+        {
+            highScore = score;
+
+            highScoreText.text = "High Score: " + highScore;
+
+
+        }
     }
 
     public void UpdateInstructionText(string instructionTextLocation, string instructionText)
@@ -335,6 +358,7 @@ public class UI_Manager : MonoBehaviour
             UpdateSpeedBoostText(playerDesignation, 0.0f);
         }
 
+        UpdateHighScoreText();
         UpdateScoreText(true);
     }
 }

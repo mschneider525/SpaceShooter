@@ -17,7 +17,7 @@ public class Enemy : Destructible
     private float _powerUp_DropRate = 0.10f;
 
     [SerializeField]
-    private GameObject _enemyExplosionPrefab = null;
+    private GameObject _explosionEnemyPrefab = null;
 
     private SpawnManager _spawnManager = null;
     private UI_Manager _uiManager = null;
@@ -89,7 +89,7 @@ public class Enemy : Destructible
     {
         Destroy(this.gameObject);
         _uiManager.UpdateScoreText();
-        ObjectExplosion(_enemyExplosionPrefab);
+        ObjectExplosion(_explosionEnemyPrefab);
         SpawnPowerUp();
     }
 

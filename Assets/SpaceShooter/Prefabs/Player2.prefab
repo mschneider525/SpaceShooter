@@ -114,7 +114,7 @@ MonoBehaviour:
     type: 3}
   _tripleShotPrefab: {fileID: 7585457621696377254, guid: 87a8c7b088ebcaf4f877a982fedb49b9,
     type: 3}
-  _playerExplosionPrefab: {fileID: 7475909333894071696, guid: 1275c487442895d46a1b150916c5c1b6,
+  _explosionPlayerPrefab: {fileID: 915039538, guid: fd74b7ee39e8d9148868910ac396a1f3,
     type: 3}
   _shield: {fileID: 1930931530162939660}
   _thruster: {fileID: 2636827262170783065}

@@ -298,7 +298,7 @@ MonoBehaviour:
   _xPosition: 0
   _yPosition: 6.25
   _powerUp_DropRate: 0.1
-  _enemyExplosionPrefab: {fileID: 1792197505464190715, guid: 252d3bea58b770f43b7f6df58c62d747,
+  _explosionEnemyPrefab: {fileID: 1792197505464190715, guid: 252d3bea58b770f43b7f6df58c62d747,
     type: 3}
 --- !u!61 &5945850409076447582
 BoxCollider2D:
