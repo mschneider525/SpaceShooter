@@ -241,4 +241,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = timeScale;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
     }
+
+    private void ResetHighScore()
+    {
+        PlayerPrefs.DeleteKey("HighScore");
+    }
 }

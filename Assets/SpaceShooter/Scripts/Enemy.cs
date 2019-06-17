@@ -32,7 +32,7 @@ public class Enemy : Destructible
         this.transform.position = new Vector3(_xPosition, _yPosition, 0);
 
         _enemySpriteRenderer = this.GetComponent<SpriteRenderer>();
-        _powerUp_DropRate = 0.50f;
+        _powerUp_DropRate = 0.10f;
 
         _uiManager = GameObject.Find("UI").GetComponent<UI_Manager>();
     }

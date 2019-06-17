@@ -24,10 +24,8 @@ public class UI_Manager : MonoBehaviour
     public Text scoreText = null;
     public int score = 0;
 
-    //[SerializeField]
-    //private GameObject _explosionScorePrefab = null;
     [SerializeField]
-    private GameObject _explosionScoreV2Prefab = null;
+    private GameObject _explosionScorePrefab = null;
     private float _clearScoreTextTime = 0.0f;
 
     public Text highScoreText = null;
@@ -46,7 +44,7 @@ public class UI_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -238,6 +236,7 @@ public class UI_Manager : MonoBehaviour
         if (score > highScore)
         {
             highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore);
 
             highScoreText.text = "High Score: " + highScore;
 
@@ -387,28 +386,35 @@ public class UI_Manager : MonoBehaviour
             UpdateSpeedBoostText(playerDesignation, 0.0f);
         }
 
+        highScore = PlayerPrefs.GetInt("HighScore");
+
+        if (highScore == 0)
+        {
+            highScore = 2000;
+            PlayerPrefs.SetInt("HighScore", 2000);
+        }
+
         UpdateScoreText(true);
         UpdateHighScoreText(true);
     }
 
     private void ScoreExplosion()
     {
-        GameObject explosion_ScoreV2 = Instantiate(_explosionScoreV2Prefab, new Vector3(0.0f, 4.0f, 0.0f), Quaternion.identity);
-        Destroy(explosion_ScoreV2, 2.5f);
+        GameObject scoreExplosion0 = Instantiate(_explosionScorePrefab, new Vector3(-1.4f, 4.0f, 0.0f), Quaternion.identity);
+        Destroy(scoreExplosion0, 2.5f);
 
-        //GameObject scoreExplosion0 = Instantiate(_explosionScorePrefab, new Vector3(-1.4f, 4.0f, 0.0f), Quaternion.identity);
-        //Destroy(scoreExplosion0, 2.5f);
+        GameObject scoreExplosion1 = Instantiate(_explosionScorePrefab, new Vector3(-0.7f, 4.0f, 0.0f), Quaternion.identity);
+        Destroy(scoreExplosion1, 2.5f);
 
-        //GameObject scoreExplosion1 = Instantiate(_explosionScorePrefab, new Vector3(-0.7f, 4.0f, 0.0f), Quaternion.identity);
-        //Destroy(scoreExplosion1, 2.5f);
+        GameObject scoreExplosion2 = Instantiate(_explosionScorePrefab, new Vector3(0.0f, 4.0f, 0.0f), Quaternion.identity);
+        Destroy(scoreExplosion2, 2.5f);
 
-        //GameObject scoreExplosion2 = Instantiate(_explosionScorePrefab, new Vector3(0.0f, 4.0f, 0.0f), Quaternion.identity);
-        //Destroy(scoreExplosion2, 2.5f);
+        GameObject scoreExplosion3 = Instantiate(_explosionScorePrefab, new Vector3(0.7f, 4.0f, 0.0f), Quaternion.identity);
+        Destroy(scoreExplosion3, 2.5f);
 
-        //GameObject scoreExplosion3 = Instantiate(_explosionScorePrefab, new Vector3(0.7f, 4.0f, 0.0f), Quaternion.identity);
-        //Destroy(scoreExplosion3, 2.5f);
-
-        //GameObject scoreExplosion4 = Instantiate(_explosionScorePrefab, new Vector3(1.4f, 4.0f, 0.0f), Quaternion.identity);
-        //Destroy(scoreExplosion4, 2.5f);
+        GameObject scoreExplosion4 = Instantiate(_explosionScorePrefab, new Vector3(1.4f, 4.0f, 0.0f), Quaternion.identity);
+        Destroy(scoreExplosion4, 2.5f);
     }
+
+    
 }
