@@ -222,6 +222,10 @@ public class Player : Destructible
 
         if (playerLives == 0)
         {
+            tripleShotAmmo = 0;
+            _uiManager.UpdateTripleShotAmmoText(playerDesignation, tripleShotAmmo);
+            hasSpeedBoost = false;
+            _uiManager.UpdateSpeedBoostText(playerDesignation, 0.0f);
             Destroy(this.gameObject);
             ObjectExplosion(_explosionPlayerPrefab);
         }

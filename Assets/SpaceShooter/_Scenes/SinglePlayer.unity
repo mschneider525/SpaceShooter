@@ -2335,7 +2335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'High Score: 400'
+  m_Text: 'High Score: 0'
 --- !u!222 &1114132725
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2968,7 +2968,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 10000'
+  m_Text: 'Score: 0'
 --- !u!222 &1804062144
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3408,8 +3408,10 @@ MonoBehaviour:
   score: 0
   _explosionScorePrefab: {fileID: 2717299983345083304, guid: b045e1169e657134995fc9f9b2eb4aac,
     type: 3}
+  _explosionScoreV2Prefab: {fileID: 2717299983345083304, guid: c7ceb3d001e71a744b7aaa2d09533bb5,
+    type: 3}
   highScoreText: {fileID: 1114132724}
-  highScore: 400
+  highScore: 2000
   instructionsTop: {fileID: 558673726}
   instructionsMiddle: {fileID: 190031209}
   instructionsBottom: {fileID: 1635279927}
