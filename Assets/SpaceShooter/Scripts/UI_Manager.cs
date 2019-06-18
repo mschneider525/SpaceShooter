@@ -381,7 +381,7 @@ public class UI_Manager : MonoBehaviour
 
             if (highScore == 0)
             {
-                highScore = 200;
+                highScore = 2000;
                 PlayerPrefs.SetInt("HighScore_SinglePlayer", highScore);
             }
         }
@@ -405,7 +405,7 @@ public class UI_Manager : MonoBehaviour
 
             if (highScore == 0)
             {
-                highScore = 400;
+                highScore = 4000;
                 PlayerPrefs.SetInt("HighScore_SinglePlayerCo-op", highScore);
             }
         }
