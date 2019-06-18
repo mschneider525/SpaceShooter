@@ -170,7 +170,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         _backgroundMusic.Stop();
-        _uiManager.GameOver();
+        _uiManager.GameOver(gameMode);
     }
 
     public void EndGame()
@@ -242,8 +242,4 @@ public class GameManager : MonoBehaviour
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
     }
 
-    private void ResetHighScore()
-    {
-        PlayerPrefs.DeleteKey("HighScore");
-    }
 }

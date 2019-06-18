@@ -90,8 +90,17 @@ public class UI_Manager : MonoBehaviour
         StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"TouchPad\"> to pause"));
     }
 
-    public void GameOver()
+    public void GameOver(string gameMode)
     {
+        if (gameMode == "SinglePlayer")
+        {
+            PlayerPrefs.SetInt("HighScore_SinglePlayer", highScore);
+        }
+        if (gameMode == "SinglePlayerCo-op")
+        {
+            PlayerPrefs.SetInt("HighScore_SinglePlayerCo-op", highScore);
+        }
+        
         StartCoroutine(GameOverInstructionText_Routine(2.0f));
     }
     
@@ -236,7 +245,6 @@ public class UI_Manager : MonoBehaviour
         if (score > highScore)
         {
             highScore = score;
-            PlayerPrefs.SetInt("HighScore", highScore);
 
             highScoreText.text = "High Score: " + highScore;
 
@@ -368,6 +376,14 @@ public class UI_Manager : MonoBehaviour
             UpdateShieldsText(playerDesignation, 0);
             UpdateTripleShotAmmoText(playerDesignation, 0);
             UpdateSpeedBoostText(playerDesignation, 0.0f);
+
+            highScore = PlayerPrefs.GetInt("HighScore_SinglePlayer");
+
+            if (highScore == 0)
+            {
+                highScore = 200;
+                PlayerPrefs.SetInt("HighScore_SinglePlayer", highScore);
+            }
         }
         if (gameMode == "SinglePlayerCo-op")
         {
@@ -384,14 +400,14 @@ public class UI_Manager : MonoBehaviour
             UpdateShieldsText(playerDesignation, 0);
             UpdateTripleShotAmmoText(playerDesignation, 0);
             UpdateSpeedBoostText(playerDesignation, 0.0f);
-        }
 
-        highScore = PlayerPrefs.GetInt("HighScore");
+            highScore = PlayerPrefs.GetInt("HighScore_SinglePlayerCo-op");
 
-        if (highScore == 0)
-        {
-            highScore = 2000;
-            PlayerPrefs.SetInt("HighScore", 2000);
+            if (highScore == 0)
+            {
+                highScore = 400;
+                PlayerPrefs.SetInt("HighScore_SinglePlayerCo-op", highScore);
+            }
         }
 
         UpdateScoreText(true);
@@ -415,6 +431,5 @@ public class UI_Manager : MonoBehaviour
         GameObject scoreExplosion4 = Instantiate(_explosionScorePrefab, new Vector3(1.4f, 4.0f, 0.0f), Quaternion.identity);
         Destroy(scoreExplosion4, 2.5f);
     }
-
     
 }
