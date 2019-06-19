@@ -81,7 +81,10 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.DeleteKey("HighScore_SinglePlayer");
         PlayerPrefs.DeleteKey("HighScore_SinglePlayerCo-op");
 
+        //Too loud, so I moved the audio position farther away from the main camera
         Vector3 audioPosition = Camera.main.transform.position;
+        audioPosition.z = -25.0f;
+
         AudioSource.PlayClipAtPoint(_audioClip_HighScoresCleared, audioPosition);
     }
 
