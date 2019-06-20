@@ -19,11 +19,23 @@ public class Enemy : Destructible
     [SerializeField]
     private GameObject _explosionEnemyPrefab = null;
 
+    private GameManager _gameManager = null;
     private SpawnManager _spawnManager = null;
     private UI_Manager _uiManager = null;
-    private Player _player = null;
+    private Player _playerScript = null;
 
     private SpriteRenderer _enemySpriteRenderer = null;
+
+    [SerializeField]
+    private GameObject _laserEnemyPrefab = null;
+
+    [SerializeField]
+    private float _coolDownTime = 1.0f;
+    private float _nextFireTime = 0.0f;
+
+    private GameObject _player = null;
+    private GameObject _player1 = null;
+    private GameObject _player2 = null;
 
     // Start is called before the first frame update
     void Start()
@@ -34,13 +46,27 @@ public class Enemy : Destructible
         _enemySpriteRenderer = this.GetComponent<SpriteRenderer>();
         _powerUp_DropRate = 0.10f;
 
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _uiManager = GameObject.Find("UI").GetComponent<UI_Manager>();
+
+        if (_gameManager.gameMode == "SinglePlayer")
+        {
+            _player = GameObject.Find("Player(Clone)");
+        }
+        if (_gameManager.gameMode == "SinglePlayerCo-op")
+        {
+            _player1 = GameObject.Find("Player1(Clone)");
+            _player2 = GameObject.Find("Player2(Clone)");
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
+
+        Shoot();
     }
 
     private void Movement()
@@ -51,6 +77,53 @@ public class Enemy : Destructible
         {
             _xPosition = Random.Range(-8.2f, 8.2f);
             this.transform.position = new Vector3(_xPosition, _yPosition, 0);
+        }
+    }
+
+    private void Shoot()
+    {
+        //if player's x position is between -0.3 and 0.3 of enemy's x position, shoot
+        if (_gameManager.gameMode == "SinglePlayer")
+        {
+            if (_player != null)
+            {
+                if (_player.transform.position.x > (this.transform.position.x - 0.4f) && _player.transform.position.x < (this.transform.position.x + 0.4f))
+                {
+                    if (Time.time > _nextFireTime)
+                    {
+                        Instantiate(_laserEnemyPrefab, this.transform.position, Quaternion.identity);
+
+                        _nextFireTime = Time.time + _coolDownTime;
+                    }
+                } 
+            }
+        }
+        if (_gameManager.gameMode == "SinglePlayerCo-op")
+        {
+            if (_player1 != null)
+            {
+                if (_player1.transform.position.x > (this.transform.position.x - 0.4f) && _player1.transform.position.x < (this.transform.position.x + 0.4f))
+                {
+                    if (Time.time > _nextFireTime)
+                    {
+                        Instantiate(_laserEnemyPrefab, this.transform.position, Quaternion.identity);
+
+                        _nextFireTime = Time.time + _coolDownTime;
+                    }
+                }
+            }
+            if (_player2 != null)
+            {
+                if (_player2.transform.position.x > (this.transform.position.x - 0.4f) && _player2.transform.position.x < (this.transform.position.x + 0.4f))
+                {
+                    if (Time.time > _nextFireTime)
+                    {
+                        Instantiate(_laserEnemyPrefab, this.transform.position, Quaternion.identity);
+
+                        _nextFireTime = Time.time + _coolDownTime;
+                    }
+                }
+            }
         }
     }
 
@@ -77,10 +150,10 @@ public class Enemy : Destructible
         {
             DestroyEnemy();
 
-            _player = other.GetComponent<Player>();
-            if (_player != null)
+            _playerScript = other.GetComponent<Player>();
+            if (_playerScript != null)
             {
-                _player.Damage();
+                _playerScript.Damage();
             }
         }
     }

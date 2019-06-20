@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7419353615262042795}
   m_Layer: 0
   m_Name: Laser_Enemy
-  m_TagString: TripleShot
+  m_TagString: Laser_Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d549808e90c431a48840a05bcea35c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 5
 --- !u!61 &1162349740780272887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right_Laser_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1415224397731036973, guid: 28313200c56715a498832acba6e0ccc6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1137443647400170994, guid: 28313200c56715a498832acba6e0ccc6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -297,6 +302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Left_Laser_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415224397731036973, guid: 28313200c56715a498832acba6e0ccc6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1137443647400170994, guid: 28313200c56715a498832acba6e0ccc6,
         type: 3}

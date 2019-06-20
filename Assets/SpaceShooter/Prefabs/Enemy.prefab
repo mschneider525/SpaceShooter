@@ -300,6 +300,9 @@ MonoBehaviour:
   _powerUp_DropRate: 0.1
   _explosionEnemyPrefab: {fileID: 1792197505464190715, guid: 252d3bea58b770f43b7f6df58c62d747,
     type: 3}
+  _laserEnemyPrefab: {fileID: 7585457621696377254, guid: 668e2891e7d74344eb3f4ead948e9d50,
+    type: 3}
+  _coolDownTime: 1
 --- !u!61 &5945850409076447582
 BoxCollider2D:
   m_ObjectHideFlags: 0

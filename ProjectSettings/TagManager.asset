@@ -10,6 +10,7 @@ TagManager:
   - TripleShot
   - Player2
   - Player1
+  - Laser_Enemy
   layers:
   - Default
   - TransparentFX
