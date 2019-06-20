@@ -23,13 +23,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject _quitGameButton = null;
 
-    [SerializeField]
-    private AudioClip _audioClip_HighScoresCleared = null;
-
+    private AudioSource _audioSource_HighScoresCleared = null;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _audioSource_HighScoresCleared = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -81,11 +79,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.DeleteKey("HighScore_SinglePlayer");
         PlayerPrefs.DeleteKey("HighScore_SinglePlayerCo-op");
 
-        //Too loud, so I moved the audio position farther away from the main camera
-        Vector3 audioPosition = Camera.main.transform.position;
-        audioPosition.z = -25.0f;
-
-        AudioSource.PlayClipAtPoint(_audioClip_HighScoresCleared, audioPosition);
+        _audioSource_HighScoresCleared.Play();
     }
 
     public void QuitGame()

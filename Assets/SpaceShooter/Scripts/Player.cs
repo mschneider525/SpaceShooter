@@ -47,12 +47,16 @@ public class Player : Destructible
     private GameManager _gameManager = null;
     private UI_Manager _uiManager = null;
 
+    [SerializeField]
+    private AudioSource _audioSource_LaserDamage = null;
 
     // Start is called before the first frame update
     void Start()
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _uiManager = GameObject.Find("UI").GetComponent<UI_Manager>();
+
+        _audioSource_LaserDamage = this.GetComponent<AudioSource>();
 
         SetPlayerStartingPositionAndDesignation(_gameManager.gameMode);
 
@@ -323,4 +327,19 @@ public class Player : Destructible
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Laser_Enemy")
+        {
+            StartCoroutine(PlayLaserDamageExplosion_Routine());
+            Damage();
+        }
+    }
+
+    private IEnumerator PlayLaserDamageExplosion_Routine()
+    {
+        _audioSource_LaserDamage.Play();
+        yield return new WaitForSeconds(2);
+        _audioSource_LaserDamage.Stop();
+    }
 }

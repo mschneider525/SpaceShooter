@@ -30,7 +30,7 @@ public class Enemy : Destructible
     private GameObject _laserEnemyPrefab = null;
 
     [SerializeField]
-    private float _coolDownTime = 1.0f;
+    private float _coolDownTime = 1.5f;
     private float _nextFireTime = 0.0f;
 
     private GameObject _player = null;
@@ -87,7 +87,9 @@ public class Enemy : Destructible
         {
             if (_player != null)
             {
-                if (_player.transform.position.x > (this.transform.position.x - 0.4f) && _player.transform.position.x < (this.transform.position.x + 0.4f))
+                if (this.transform.position.y > 0
+                    && _player.transform.position.x > (this.transform.position.x - 0.4f)
+                    && _player.transform.position.x < (this.transform.position.x + 0.4f))
                 {
                     if (Time.time > _nextFireTime)
                     {
@@ -102,7 +104,9 @@ public class Enemy : Destructible
         {
             if (_player1 != null)
             {
-                if (_player1.transform.position.x > (this.transform.position.x - 0.4f) && _player1.transform.position.x < (this.transform.position.x + 0.4f))
+                if (this.transform.position.y > 0
+                    && _player1.transform.position.x > (this.transform.position.x - 0.4f)
+                    && _player1.transform.position.x < (this.transform.position.x + 0.4f))
                 {
                     if (Time.time > _nextFireTime)
                     {
