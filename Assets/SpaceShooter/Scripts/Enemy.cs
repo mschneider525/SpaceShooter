@@ -165,7 +165,7 @@ public class Enemy : Destructible
     private void DestroyEnemy()
     {
         Destroy(this.gameObject);
-        _uiManager.UpdateScoreText();
+        _uiManager.UpdateScoreText(false, this.gameObject.tag);
         ObjectExplosion(_explosionEnemyPrefab);
         SpawnPowerUp();
     }
@@ -174,7 +174,7 @@ public class Enemy : Destructible
     {
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
 
-        if (_spawnManager != null && Random.value <= _powerUp_DropRate)
+        if (_spawnManager != null) // && Random.value <= _powerUp_DropRate
         {
             _spawnManager.SpawnPowerUp(this.transform.position);
 

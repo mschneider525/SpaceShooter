@@ -214,9 +214,12 @@ public class UI_Manager : MonoBehaviour
         
     }
 
-    public void UpdateScoreText(bool resetScore = false)
+    public void UpdateScoreText(bool resetScore = false, string objectTag = null)
     {
-        score += 100;
+        if (objectTag == "Asteroid")
+            score += 100;
+        else
+            score += 500;
 
         if (resetScore == true)
         {

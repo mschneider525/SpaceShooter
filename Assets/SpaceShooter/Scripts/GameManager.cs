@@ -209,6 +209,16 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        GameObject[] asteroidGameObjects = GameObject.FindGameObjectsWithTag("Asteroid");
+        int numberOfAsteroids = asteroidGameObjects.Length;
+        if (numberOfAsteroids > 0)
+        {
+            foreach (GameObject asteroid in asteroidGameObjects)
+            {
+                Destroy(asteroid);
+            }
+        }
+
         GameObject[] enemyGameObjects = GameObject.FindGameObjectsWithTag("Enemy");
         int numberOfEnemies = enemyGameObjects.Length;
         if (numberOfEnemies > 0)

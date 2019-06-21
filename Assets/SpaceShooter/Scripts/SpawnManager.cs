@@ -7,6 +7,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject _enemyShipPrefab = null;
     [SerializeField]
+    private GameObject _asteroidPrefab = null;
+    [SerializeField]
     private float _enemySpawn_xPosition = 0.0f;
     [SerializeField]
     private float _enemySpawn_yPosition = 6.25f;
@@ -45,15 +47,26 @@ public class SpawnManager : MonoBehaviour
     //Creat coroutine to spawn an enemy every five seconds
     public IEnumerator SpawnEnemy_Routine(Player player, int score)
     {
-        GameObject[] enemyShipList = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemyList = GameObject.FindGameObjectsWithTag("Enemy");
 
         if (player.playerLives > 0)
         {
-            if (enemyShipList != null && enemyShipList.Length <= 50)
+            if (enemyList != null && enemyList.Length <= 50)
             {
                 _enemySpawn_xPosition = Random.Range(-8.2f, 8.2f);
-                _enemyShipPrefab.transform.position = new Vector3(_enemySpawn_xPosition, _enemySpawn_yPosition, 0);
-                Instantiate(_enemyShipPrefab, _enemyShipPrefab.transform.position, Quaternion.identity);
+
+                if (Random.value <= 0.10f)
+                {
+                    _enemyShipPrefab.transform.position = new Vector3(_enemySpawn_xPosition, _enemySpawn_yPosition, 0);
+                    Instantiate(_enemyShipPrefab, _enemyShipPrefab.transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    _asteroidPrefab.transform.position = new Vector3(_enemySpawn_xPosition, _enemySpawn_yPosition, 0);
+                    Instantiate(_asteroidPrefab, _asteroidPrefab.transform.position, Quaternion.identity);
+                }
+
+                
             }
 
             if (score >= 10000)
@@ -116,15 +129,4 @@ public class SpawnManager : MonoBehaviour
         Instantiate(_powerUps[randomPowerUp], position, Quaternion.identity);
     }
 
-    /*--Attempted to delay spawning of the power up a bit after enemy destruction. It didn't work.--*/
-    //public IEnumerator DelaySpawnPowerUp_Routine(float delayTime, Vector3 position)
-    //{
-    //    yield return new WaitForSeconds(delayTime);
-
-    //    //0: TripleShot
-    //    //1: SpeedBoost
-    //    //2: Shield
-    //    int randomPowerUp = Random.Range(0, 3);
-    //    Instantiate(_powerUps[randomPowerUp], position, Quaternion.identity);
-    //}
 }
