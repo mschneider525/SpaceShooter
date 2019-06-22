@@ -14,9 +14,6 @@ public class Enemy : Destructible
     private float _yPosition = 6.25f;
 
     [SerializeField]
-    private float _powerUp_DropRate = 0.10f;
-
-    [SerializeField]
     private GameObject _explosionEnemyPrefab = null;
 
     private GameManager _gameManager = null;
@@ -44,7 +41,6 @@ public class Enemy : Destructible
         this.transform.position = new Vector3(_xPosition, _yPosition, 0);
 
         _enemySpriteRenderer = this.GetComponent<SpriteRenderer>();
-        _powerUp_DropRate = 0.10f;
 
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _uiManager = GameObject.Find("UI").GetComponent<UI_Manager>();
@@ -174,14 +170,9 @@ public class Enemy : Destructible
     {
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
 
-        if (_spawnManager != null) // && Random.value <= _powerUp_DropRate
+        if (_spawnManager != null)
         {
             _spawnManager.SpawnPowerUp(this.transform.position);
-
-            /*--Attempted to delay spawning of the power up a bit after enemy desctruction. It didn't work.--*/
-            //Vector3 spawnPosition = this.transform.position;
-            //IEnumerator spawnPowerUp = _spawnManager.DelaySpawnPowerUp_Routine(2.0f, spawnPosition);
-            //StartCoroutine(spawnPowerUp);
         }
     }
 
