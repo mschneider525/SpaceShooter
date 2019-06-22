@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour
 
         if (_uiManager.instructionsBottom.text != "" && Input.GetButtonDown("TouchPad"))
         {
-            StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.1f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"TouchPad\"> to pause"));
+            StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.1f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"PS4_TouchPad\"> to pause"));
         }
     }
 
