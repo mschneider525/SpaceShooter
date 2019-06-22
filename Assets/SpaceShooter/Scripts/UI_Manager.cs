@@ -219,7 +219,7 @@ public class UI_Manager : MonoBehaviour
         if (objectTag == "Asteroid")
             score += 100;
         else
-            score += 500;
+            score += 200;
 
         if (resetScore == true)
         {
