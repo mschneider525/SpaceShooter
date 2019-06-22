@@ -83,15 +83,11 @@ public class Enemy : Destructible
         {
             if (_player != null)
             {
-                if (this.transform.position.y > 0
-                    && _player.transform.position.x > (this.transform.position.x - 0.4f)
-                    && _player.transform.position.x < (this.transform.position.x + 0.4f))
+                if (_player.transform.position.x > (this.transform.position.x - 0.4f) && _player.transform.position.x < (this.transform.position.x + 0.4f))
                 {
                     if (Time.time > _nextFireTime)
                     {
-                        Instantiate(_laserEnemyPrefab, this.transform.position, Quaternion.identity);
-
-                        _nextFireTime = Time.time + _coolDownTime;
+                        Enemy_Shoot();
                     }
                 } 
             }
@@ -100,15 +96,11 @@ public class Enemy : Destructible
         {
             if (_player1 != null)
             {
-                if (this.transform.position.y > 0
-                    && _player1.transform.position.x > (this.transform.position.x - 0.4f)
-                    && _player1.transform.position.x < (this.transform.position.x + 0.4f))
+                if (_player1.transform.position.x > (this.transform.position.x - 0.4f) && _player1.transform.position.x < (this.transform.position.x + 0.4f))
                 {
                     if (Time.time > _nextFireTime)
                     {
-                        Instantiate(_laserEnemyPrefab, this.transform.position, Quaternion.identity);
-
-                        _nextFireTime = Time.time + _coolDownTime;
+                        Enemy_Shoot();
                     }
                 }
             }
@@ -118,9 +110,7 @@ public class Enemy : Destructible
                 {
                     if (Time.time > _nextFireTime)
                     {
-                        Instantiate(_laserEnemyPrefab, this.transform.position, Quaternion.identity);
-
-                        _nextFireTime = Time.time + _coolDownTime;
+                        Enemy_Shoot();
                     }
                 }
             }
@@ -176,4 +166,16 @@ public class Enemy : Destructible
         }
     }
 
+    private void Enemy_Shoot()
+    {
+        //Prevent the first shots from firing immediately; fire after 0.5 seconds
+        if (_nextFireTime == 0.0f)
+        {
+            _nextFireTime = Time.time + 0.5f;
+            return;
+        }
+
+        Instantiate(_laserEnemyPrefab, this.transform.position, Quaternion.identity);
+        _nextFireTime = Time.time + _coolDownTime;
+    }
 }
