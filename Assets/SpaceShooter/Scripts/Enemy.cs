@@ -126,13 +126,14 @@ public class Enemy : Destructible
             {
                 _enemyHealth--;
                 StartCoroutine(DamageColorChange_Routine(this.gameObject));
+                ObjectExplosion(_explosionLaserPrefab, other.transform.position);
             }
 
             if (_enemyHealth == 0 || other.tag == "TripleShot")
             {
                 DestroyEnemy();
             }
-
+            
             Destroy(other.gameObject);
         }
 

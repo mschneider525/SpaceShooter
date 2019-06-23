@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour
 {
+    [SerializeField]
+    protected GameObject _explosionLaserPrefab = null;
+
     protected IEnumerator DamageColorChange_Routine(GameObject gameObject)
     {
         //Color originalColor = spriteRenderer.color;

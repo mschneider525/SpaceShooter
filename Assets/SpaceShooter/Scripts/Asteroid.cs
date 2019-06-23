@@ -74,6 +74,7 @@ public class Asteroid : Destructible
             {
                 _asteroidHealth--;
                 StartCoroutine(DamageColorChange_Routine(this.gameObject));
+                ObjectExplosion(_explosionLaserPrefab, other.transform.position);
             }
 
             if (_asteroidHealth == 0 || other.tag == "TripleShot")
