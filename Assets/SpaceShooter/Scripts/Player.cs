@@ -327,9 +327,44 @@ public class Player : Destructible
     {
         if (other.tag == "Laser_Enemy")
         {
-            PlayerDamage();
+            AdjustEnemylaserExplosionPositionBasedOnActiveShield();
             ObjectExplosion(_explosionEnemyLaserPrefab, other.transform.position);
             Destroy(other.gameObject);
+            PlayerDamage();
+        }
+    }
+
+    private void AdjustEnemylaserExplosionPositionBasedOnActiveShield()
+    {
+        Transform[] explosionEnemyLaserTransformArray = _explosionEnemyLaserPrefab.GetComponentsInChildren<Transform>();
+
+        if (_shield.activeSelf == true)
+        {
+            foreach (Transform laserExplosion in explosionEnemyLaserTransformArray)
+            {
+                if (laserExplosion.name == "Explosion_Enemy_Laser_Left")
+                {
+                    laserExplosion.transform.position = new Vector3(-0.117f, -0.9f, 0.0f);
+                }
+                if (laserExplosion.name == "Explosion_Enemy_Laser_Right")
+                {
+                    laserExplosion.transform.position = new Vector3(0.117f, -0.9f, 0.0f);
+                }
+            }
+        }
+        else //if(_shield.activeSelf == false)
+        {
+            foreach (Transform laserExplosion in explosionEnemyLaserTransformArray)
+            {
+                if (laserExplosion.name == "Explosion_Enemy_Laser_Left")
+                {
+                    laserExplosion.transform.position = new Vector3(-0.117f, -1.2f, 0.0f);
+                }
+                if (laserExplosion.name == "Explosion_Enemy_Laser_Right")
+                {
+                    laserExplosion.transform.position = new Vector3(0.117f, -1.2f, 0.0f);
+                }
+            }
         }
     }
 
