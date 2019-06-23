@@ -11,9 +11,17 @@ public class Destructible : MonoBehaviour
 
     protected IEnumerator DamageColorChange_Routine(GameObject gameObject)
     {
-        //Color originalColor = spriteRenderer.color;
+        SpriteRenderer spriteRenderer = null;
 
-        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        if (gameObject.tag == "Asteroid")
+        {
+            spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
+        }
+        else
+        {
+            spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        }
+        
 
         for (int i = 1; i <= 4; i++)
         {

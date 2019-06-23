@@ -20,8 +20,6 @@ public class Asteroid : Destructible
     private UI_Manager _uiManager = null;
     private Player _playerScript = null;
 
-    private SpriteRenderer _asteroidSpriteRenderer = null;
-
     private GameObject _player = null;
     private GameObject _player1 = null;
     private GameObject _player2 = null;
@@ -31,8 +29,6 @@ public class Asteroid : Destructible
     {
         _xPosition = Random.Range(-8.2f, 8.2f);
         this.transform.position = new Vector3(_xPosition, _yPosition, 0);
-
-        _asteroidSpriteRenderer = this.GetComponent<SpriteRenderer>();
 
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _uiManager = GameObject.Find("UI").GetComponent<UI_Manager>();

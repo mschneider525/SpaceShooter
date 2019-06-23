@@ -1564,7 +1564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyShipPrefab: {fileID: 5945850409076447580, guid: df3628fd43e192343a5e47f9389fde83,
     type: 3}
-  _asteroidPrefab: {fileID: 4623550399269241178, guid: cbfa1d3469ce0e2478fec37ed985eb8b,
+  _asteroidPrefab: {fileID: 8471075842312470492, guid: 87b79419954924d469b088ed55b40421,
     type: 3}
   _enemySpawn_xPosition: 0
   _enemySpawn_yPosition: 6.25
