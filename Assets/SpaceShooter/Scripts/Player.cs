@@ -201,7 +201,7 @@ public class Player : Destructible
         }
     }
 
-    public void Damage()
+    public void PlayerDamage()
     {
         if (shieldLevel > 0)
         {
@@ -332,7 +332,8 @@ public class Player : Destructible
         if (other.tag == "Laser_Enemy")
         {
             StartCoroutine(PlayLaserDamageExplosion_Routine());
-            Damage();
+            PlayerDamage();
+            Destroy(other.gameObject);
         }
     }
 

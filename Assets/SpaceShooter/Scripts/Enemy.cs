@@ -143,7 +143,7 @@ public class Enemy : Destructible
             _playerScript = other.GetComponent<Player>();
             if (_playerScript != null)
             {
-                _playerScript.Damage();
+                _playerScript.PlayerDamage();
             }
         }
     }
