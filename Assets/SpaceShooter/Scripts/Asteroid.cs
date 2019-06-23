@@ -100,6 +100,6 @@ public class Asteroid : Destructible
     {
         Destroy(this.gameObject);
         _uiManager.UpdateScoreText(false, this.gameObject.tag);
-        ObjectExplosion(_explosionPrefab);
+        ObjectExplosion(_explosionPrefab, this.transform.position);
     }
 }

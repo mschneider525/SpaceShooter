@@ -152,7 +152,7 @@ public class Enemy : Destructible
     {
         Destroy(this.gameObject);
         _uiManager.UpdateScoreText(false, this.gameObject.tag);
-        ObjectExplosion(_explosionEnemyPrefab);
+        ObjectExplosion(_explosionEnemyPrefab, this.transform.position);
         SpawnPowerUp();
     }
 

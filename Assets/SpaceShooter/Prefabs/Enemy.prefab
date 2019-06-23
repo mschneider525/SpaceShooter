@@ -293,11 +293,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04643df93768c264398972e9502bfa2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionLaserPrefab: {fileID: 2717299983345083304, guid: d3ceccb02cb695742898fef12d1c4668,
+    type: 3}
   _speed: 3
   _enemyHealth: 3
   _xPosition: 0
   _yPosition: 6.25
-  _powerUp_DropRate: 0.1
   _explosionEnemyPrefab: {fileID: 1792197505464190715, guid: 252d3bea58b770f43b7f6df58c62d747,
     type: 3}
   _laserEnemyPrefab: {fileID: 7585457621696377254, guid: 668e2891e7d74344eb3f4ead948e9d50,

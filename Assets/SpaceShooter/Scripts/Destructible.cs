@@ -41,9 +41,9 @@ public class Destructible : MonoBehaviour
         }
     }
 
-    public void ObjectExplosion(GameObject gameObject)
+    public void ObjectExplosion(GameObject gameObject, Vector3 position)
     {
-        GameObject gameObjectExplosion = Instantiate(gameObject, this.transform.position, Quaternion.identity);
+        GameObject gameObjectExplosion = Instantiate(gameObject, position, Quaternion.identity);
         Destroy(gameObjectExplosion, 2.5f);
     }
 }

@@ -231,7 +231,7 @@ public class Player : Destructible
             hasSpeedBoost = false;
             _uiManager.UpdateSpeedBoostText(playerDesignation, 0.0f);
             Destroy(this.gameObject);
-            ObjectExplosion(_explosionPlayerPrefab);
+            ObjectExplosion(_explosionPlayerPrefab, this.transform.position);
         }
     }
 

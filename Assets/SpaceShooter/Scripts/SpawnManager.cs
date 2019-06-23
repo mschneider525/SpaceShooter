@@ -55,7 +55,7 @@ public class SpawnManager : MonoBehaviour
             {
                 _enemySpawn_xPosition = Random.Range(-8.2f, 8.2f);
 
-                if (Random.value <= 0.90f)
+                if (Random.value <= 0.10f)
                 {
                     _enemyShipPrefab.transform.position = new Vector3(_enemySpawn_xPosition, _enemySpawn_yPosition, 0);
                     Instantiate(_enemyShipPrefab, _enemyShipPrefab.transform.position, Quaternion.identity);
