@@ -298,7 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c6cffe605066004aa3c035f615ff02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip_laserDamage: {fileID: 8300000, guid: a885c043fab7e46438bba03ba9dab6bc,
+  _explosionLaserPrefab: {fileID: 0}
+  _explosionEnemyLaserPrefab: {fileID: 7694400578989677363, guid: a5f41f344a58247499a42a2a82f2ec76,
     type: 3}
   playerLives: 3
   tripleShotAmmo: 0

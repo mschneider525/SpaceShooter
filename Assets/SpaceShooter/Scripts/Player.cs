@@ -328,6 +328,7 @@ public class Player : Destructible
         if (other.tag == "Laser_Enemy")
         {
             PlayerDamage();
+            ObjectExplosion(_explosionEnemyLaserPrefab, other.transform.position);
             Destroy(other.gameObject);
         }
     }

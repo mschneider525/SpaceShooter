@@ -6,6 +6,8 @@ public class Destructible : MonoBehaviour
 {
     [SerializeField]
     protected GameObject _explosionLaserPrefab = null;
+    [SerializeField]
+    protected GameObject _explosionEnemyLaserPrefab = null;
 
     protected IEnumerator DamageColorChange_Routine(GameObject gameObject)
     {
