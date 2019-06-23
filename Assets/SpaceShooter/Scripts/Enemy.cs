@@ -83,7 +83,9 @@ public class Enemy : Destructible
         {
             if (_player != null)
             {
-                if (_player.transform.position.x > (this.transform.position.x - 0.4f) && _player.transform.position.x < (this.transform.position.x + 0.4f))
+                if (this.transform.position.y > -2.0f
+                    && _player.transform.position.x > (this.transform.position.x - 0.4f)
+                    && _player.transform.position.x < (this.transform.position.x + 0.4f))
                 {
                     if (Time.time > _nextFireTime)
                     {
@@ -96,7 +98,9 @@ public class Enemy : Destructible
         {
             if (_player1 != null)
             {
-                if (_player1.transform.position.x > (this.transform.position.x - 0.4f) && _player1.transform.position.x < (this.transform.position.x + 0.4f))
+                if (this.transform.position.y > -2.0f
+                    && _player1.transform.position.x > (this.transform.position.x - 0.4f)
+                    && _player1.transform.position.x < (this.transform.position.x + 0.4f))
                 {
                     if (Time.time > _nextFireTime)
                     {
@@ -106,7 +110,9 @@ public class Enemy : Destructible
             }
             if (_player2 != null)
             {
-                if (_player2.transform.position.x > (this.transform.position.x - 0.4f) && _player2.transform.position.x < (this.transform.position.x + 0.4f))
+                if (this.transform.position.y > -2.0f
+                    && _player2.transform.position.x > (this.transform.position.x - 0.4f)
+                    && _player2.transform.position.x < (this.transform.position.x + 0.4f))
                 {
                     if (Time.time > _nextFireTime)
                     {
