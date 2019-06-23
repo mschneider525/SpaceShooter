@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5495363116907376096}
   - component: {fileID: 1512520871818941612}
-  - component: {fileID: 8622252951894041944}
+  - component: {fileID: 2647338356500381133}
   - component: {fileID: 8204970883097806760}
   m_Layer: 0
   m_Name: Explosion_Laser
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8622252951894041944
+--- !u!95 &2647338356500381133
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -91,7 +91,7 @@ Animator:
   m_GameObject: {fileID: 2717299983345083304}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 74010a6d81be5a147a3264f399f05c7a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 741ce5f307c552941b382b3e63f6ef5e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
