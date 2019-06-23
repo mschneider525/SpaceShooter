@@ -358,11 +358,11 @@ public class Player : Destructible
             {
                 if (laserExplosion.name == "Explosion_Enemy_Laser_Left")
                 {
-                    laserExplosion.transform.position = new Vector3(-0.117f, -1.2f, 0.0f);
+                    laserExplosion.transform.position = new Vector3(-0.117f, -1.3f, 0.0f);
                 }
                 if (laserExplosion.name == "Explosion_Enemy_Laser_Right")
                 {
-                    laserExplosion.transform.position = new Vector3(0.117f, -1.2f, 0.0f);
+                    laserExplosion.transform.position = new Vector3(0.117f, -1.3f, 0.0f);
                 }
             }
         }
