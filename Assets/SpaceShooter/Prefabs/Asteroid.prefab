@@ -93,6 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59433a882f1bbae44b10ccaf39a4c45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioClip_laserDamage: {fileID: 8300000, guid: a885c043fab7e46438bba03ba9dab6bc,
+    type: 3}
   _speed: 2.75
   _asteroidHealth: 3
   _xPosition: 0
