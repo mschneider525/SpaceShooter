@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour
 {
-    public IEnumerator DamageColorChange_Routine(GameObject gameObject)
+    protected IEnumerator DamageColorChange_Routine(GameObject gameObject)
     {
         //Color originalColor = spriteRenderer.color;
 
@@ -41,7 +41,7 @@ public class Destructible : MonoBehaviour
         }
     }
 
-    public void ObjectExplosion(GameObject gameObject, Vector3 position)
+    protected void ObjectExplosion(GameObject gameObject, Vector3 position)
     {
         GameObject gameObjectExplosion = Instantiate(gameObject, position, Quaternion.identity);
         Destroy(gameObjectExplosion, 2.5f);
