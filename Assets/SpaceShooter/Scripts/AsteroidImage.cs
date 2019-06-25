@@ -19,7 +19,11 @@ public class AsteroidImage : MonoBehaviour
         {
             _spinSpeed = GetRandomSpinSpeed();
         }
-        this.transform.Rotate(0, 0, _spinSpeed);
+
+        if (Time.timeScale != 0) //If game is not paused
+        {
+            this.transform.Rotate(0, 0, _spinSpeed); 
+        }
     }
 
     private float GetRandomSpinSpeed()

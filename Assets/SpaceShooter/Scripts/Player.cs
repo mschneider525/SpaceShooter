@@ -101,7 +101,7 @@ public class Player : Destructible
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
 
-            if (Input.GetButton("L2"))
+            if (Input.GetButton("L2") || Input.GetKey(KeyCode.Space))
             {
                 Shoot();
             }
@@ -111,7 +111,7 @@ public class Player : Destructible
             horizontalInput = Input.GetAxis("Horizontal2");
             verticalInput = Input.GetAxis("Vertical2");
 
-            if (Input.GetButton("R2"))
+            if (Input.GetButton("R2") || Input.GetKey(KeyCode.Keypad0) || Input.GetKey(KeyCode.Quote))
             {
                 Shoot();
             }
@@ -121,7 +121,13 @@ public class Player : Destructible
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
 
-            if (Input.GetButton("R2"))
+            if (horizontalInput == 0.0f && verticalInput == 0.0f)
+            {
+                horizontalInput = Input.GetAxis("Horizontal2");
+                verticalInput = Input.GetAxis("Vertical2");
+            }
+
+            if (Input.GetButton("R2") || Input.GetButton("L2") || Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
             {
                 Shoot();
             }
@@ -180,7 +186,7 @@ public class Player : Destructible
 
     private void Shoot()
     {
-        if (Time.time > _nextFireTime)
+        if (Time.time > _nextFireTime && _gameManager.gamePaused != true)
         {
             if (tripleShotAmmo > 0)
             {

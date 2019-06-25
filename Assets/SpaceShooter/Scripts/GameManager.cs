@@ -48,22 +48,22 @@ public class GameManager : MonoBehaviour
     {
         if (gameOver == true)
         {
-            if ((Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Cross")) && _uiManager.instructionsMiddle.text != "")
+            if ((Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.Return)) && _uiManager.instructionsMiddle.text != "")
             {
                 StartGame();
             }
-            if ((Input.GetKeyDown(KeyCode.M) || Input.GetButtonDown("Circle")) && _uiManager.instructionsTop.text != "")
+            if ((Input.GetButtonDown("Circle") || Input.GetKeyDown(KeyCode.M)) && _uiManager.instructionsTop.text != "")
             {
                 EndGame();
             }
         }
         else
         {
-            if (gamePaused == false && Input.GetButtonDown("TouchPad"))
+            if (gamePaused == false && (Input.GetButtonDown("TouchPad") || Input.GetKeyDown(KeyCode.P)))
             {
                 PauseGame();
             }
-            else if (gamePaused == true && (Input.GetButtonDown("TouchPad") || Input.GetButtonDown("Circle")))
+            else if (gamePaused == true && (Input.GetButtonDown("TouchPad") || Input.GetButtonDown("Circle") || Input.GetKeyDown(KeyCode.P)))
             {
                 ResumeGame();
             }
