@@ -68,11 +68,11 @@ public class UI_Manager : MonoBehaviour
 
         if (gameMode == "SinglePlayer")
         {
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
-            //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "Use [W][A][S][D] or [Arrow Keys] to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
-            //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "Use [Left Mouse] or [Space Bar] to shoot"));
+            //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
+            //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
 
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"Desktop\" name=\"AWSD 1\"> to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"Desktop\" name=\"Mouse Left\"> to shoot"));
         }
         //SinglePlayerCo-op Instructions
         if (gameMode == "SinglePlayerCo-op")
@@ -87,7 +87,7 @@ public class UI_Manager : MonoBehaviour
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
         }
 
-        StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"PS4_TouchPad\"> to pause"));
+        StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"KEY_P\" name=\"KEY_P\"> to pause"));
     }
 
     public void GameOver(string gameMode)

@@ -36,8 +36,8 @@ MonoBehaviour:
     y: 384
     width: 128
     height: 128
-    xOffset: -64
-    yOffset: 64
+    xOffset: 0
+    yOffset: 110
     xAdvance: 128
     scale: 1
     name: Mouse Left
@@ -92,8 +92,8 @@ MonoBehaviour:
     y: 256
     width: 128
     height: 128
-    xOffset: -64
-    yOffset: 64
+    xOffset: -10
+    yOffset: 107
     xAdvance: 128
     scale: 1
     name: AWSD 1
