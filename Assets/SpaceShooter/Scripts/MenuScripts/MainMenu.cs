@@ -24,10 +24,16 @@ public class MainMenu : MonoBehaviour
     private GameObject _quitGameButton = null;
 
     private AudioSource _audioSource_HighScoresCleared = null;
+
+    [SerializeField]
+    private EventSystem _mainMenuEventSystem = null;
+
     // Start is called before the first frame update
     void Start()
     {
         _audioSource_HighScoresCleared = this.GetComponent<AudioSource>();
+
+        _mainMenuEventSystem.firstSelectedGameObject = null;
     }
 
     // Update is called once per frame
@@ -35,7 +41,7 @@ public class MainMenu : MonoBehaviour
     {
         if (EventSystem.current.currentSelectedGameObject == _singlePlayerButton)
         {
-            _singlePlayerCross.SetActive(true);
+            _singlePlayerCross.SetActive(false);
             _singlePlayerCoOpCross.SetActive(false);
             _clearHighScoresCross.SetActive(false);
             _quitGameCross.SetActive(false);
@@ -43,7 +49,7 @@ public class MainMenu : MonoBehaviour
         if (EventSystem.current.currentSelectedGameObject == _singlePlayerCoOpButton)
         {
             _singlePlayerCross.SetActive(false);
-            _singlePlayerCoOpCross.SetActive(true);
+            _singlePlayerCoOpCross.SetActive(false);
             _clearHighScoresCross.SetActive(false);
             _quitGameCross.SetActive(false);
         }
@@ -51,7 +57,7 @@ public class MainMenu : MonoBehaviour
         {
             _singlePlayerCross.SetActive(false);
             _singlePlayerCoOpCross.SetActive(false);
-            _clearHighScoresCross.SetActive(true);
+            _clearHighScoresCross.SetActive(false);
             _quitGameCross.SetActive(false);
         }
         if (EventSystem.current.currentSelectedGameObject == _quitGameButton)
@@ -59,7 +65,7 @@ public class MainMenu : MonoBehaviour
             _singlePlayerCross.SetActive(false);
             _singlePlayerCoOpCross.SetActive(false);
             _clearHighScoresCross.SetActive(false);
-            _quitGameCross.SetActive(true);
+            _quitGameCross.SetActive(false);
         }
 
     }

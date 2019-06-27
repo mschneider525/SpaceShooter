@@ -29,13 +29,13 @@ public class PauseMenu : MonoBehaviour
     {
         if (EventSystem.current.currentSelectedGameObject == _resumeButton)
         {
-            _resumeCross.SetActive(true);
+            _resumeCross.SetActive(false);
             _quitCross.SetActive(false);
         }
         if (EventSystem.current.currentSelectedGameObject == _quitButton)
         {
             _resumeCross.SetActive(false);
-            _quitCross.SetActive(true);
+            _quitCross.SetActive(false);
         }
     }
 

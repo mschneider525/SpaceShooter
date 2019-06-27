@@ -32,6 +32,8 @@ public class UI_Manager : MonoBehaviour
     public int highScore = 0;
 
     public TextMeshProUGUI instructionsTop = null;
+    public TextMeshProUGUI instructions_W = null;
+    public TextMeshProUGUI instructions_O = null;
     public TextMeshProUGUI instructionsMiddle = null;
     public TextMeshProUGUI instructionsBottom = null;
 
@@ -71,8 +73,10 @@ public class UI_Manager : MonoBehaviour
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
 
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"Desktop\" name=\"AWSD 1\"> to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"Desktop\" name=\"Mouse Left\"> to shoot"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "[W]"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "O", "[O]"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "[A][S][D] or [K][L][ ; ] to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "[Space] or <sprite=\"Desktop\" name=\"Mouse Left\"> to shoot"));
         }
         //SinglePlayerCo-op Instructions
         if (gameMode == "SinglePlayerCo-op")
@@ -87,7 +91,8 @@ public class UI_Manager : MonoBehaviour
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
         }
 
-        StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"KEY_P\" name=\"KEY_P\"> to pause"));
+        //StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"PS4_TouchPad\"> to pause"));
+        StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "[P] to pause"));
     }
 
     public void GameOver(string gameMode)
@@ -295,6 +300,12 @@ public class UI_Manager : MonoBehaviour
                     instructionsTop.fontSize = 20;
                     //instructionsTop.fontSize = 15;
                 break;
+            case "W":
+                instructions_W.text = instructionText;
+                break;
+            case "O":
+                instructions_O.text = instructionText;
+                break;
             case "TopLeft":
                 instructionsTopLeft.text = instructionText;
                 break;
@@ -323,6 +334,12 @@ public class UI_Manager : MonoBehaviour
         {
             case "Top":
                 instructionsTop.text = "";
+                break;
+            case "W":
+                instructions_W.text = "";
+                break;
+            case "O":
+                instructions_O.text = "";
                 break;
             case "TopLeft":
                 instructionsTopLeft.text = "";
@@ -361,10 +378,11 @@ public class UI_Manager : MonoBehaviour
             UpdateInstructionText("Top", "NEW HIGH SCORE: " + highScore);
         }
 
-        UpdateInstructionText("Middle", "<sprite=\"PS4_Outlined\" name=\"Cross\"> to play again");
-        //UpdateInstructionText("Middle", "Press [Enter] to play again");
-        UpdateInstructionText("Bottom", "<sprite=\"PS4_Outlined\" name=\"Circle\"> to return to the Main Menu");
-        //UpdateInstructionText("Bottom", "Press [M] to return to the main Menu");
+        //UpdateInstructionText("Middle", "<sprite=\"PS4_Outlined\" name=\"Cross\"> to play again");
+        //UpdateInstructionText("Bottom", "<sprite=\"PS4_Outlined\" name=\"Circle\"> to return to the Main Menu");
+
+        UpdateInstructionText("Middle", "[Enter] to play again");
+        UpdateInstructionText("Bottom", "[M] to return to the Main Menu");
     }
 
     public void Reset_HUD(string gameMode)
