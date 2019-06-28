@@ -31,9 +31,11 @@ public class UI_Manager : MonoBehaviour
     public Text highScoreText = null;
     public int highScore = 0;
 
-    public TextMeshProUGUI instructionsTop = null;
     public TextMeshProUGUI instructions_W = null;
     public TextMeshProUGUI instructions_O = null;
+    public TextMeshProUGUI instructions_8 = null;
+
+    public TextMeshProUGUI instructionsTop = null;
     public TextMeshProUGUI instructionsMiddle = null;
     public TextMeshProUGUI instructionsBottom = null;
 
@@ -63,11 +65,6 @@ public class UI_Manager : MonoBehaviour
     {
         Reset_HUD(gameMode);
 
-        /*-----For Keyboard and Mouse-----*/
-        //instructionsTop.fontSize = 15;
-        //instructionsMiddle.fontSize = 15;
-        //instructionsBottom.fontSize = 15;
-
         if (gameMode == "SinglePlayer")
         {
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
@@ -84,11 +81,20 @@ public class UI_Manager : MonoBehaviour
             UpdateInstructionText("Top", "");
             UpdateInstructionText("Middle", "");
 
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopLeft", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleLeft", "<sprite=\"PS4_Outlined\" name=\"L2\"> to shoot"));
+            //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopLeft", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
+            //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleLeft", "<sprite=\"PS4_Outlined\" name=\"L2\"> to shoot"));
 
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "<sprite=\"PS4_Outlined\" name=\"JS Right\"> to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
+            //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "<sprite=\"PS4_Outlined\" name=\"JS Right\"> to move"));
+            //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
+
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "[W]"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "8", "[8]"));
+            
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopLeft", "[A][S][D] to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleLeft", "[Space] to shoot"));
+
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "[4][5][6] to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "[0  ] to shoot"));
         }
 
         //StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"PS4_TouchPad\"> to pause"));
@@ -298,13 +304,15 @@ public class UI_Manager : MonoBehaviour
                     instructionsTop.fontSize = 32;
                 else
                     instructionsTop.fontSize = 20;
-                    //instructionsTop.fontSize = 15;
                 break;
             case "W":
                 instructions_W.text = instructionText;
                 break;
             case "O":
                 instructions_O.text = instructionText;
+                break;
+            case "8":
+                instructions_8.text = instructionText;
                 break;
             case "TopLeft":
                 instructionsTopLeft.text = instructionText;
@@ -340,6 +348,9 @@ public class UI_Manager : MonoBehaviour
                 break;
             case "O":
                 instructions_O.text = "";
+                break;
+            case "8":
+                instructions_8.text = "";
                 break;
             case "TopLeft":
                 instructionsTopLeft.text = "";
