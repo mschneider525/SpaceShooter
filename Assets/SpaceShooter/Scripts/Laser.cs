@@ -25,7 +25,7 @@ public class Laser : MonoBehaviour
 
         if (this.tag == "Laser_Enemy")
         {
-            _speed = 5.0f;
+            _speed = 4.25f;
 
             transform.Translate(Vector3.down * _speed * Time.deltaTime);
 

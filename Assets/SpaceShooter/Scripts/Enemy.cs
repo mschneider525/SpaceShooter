@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : Destructible
 {
     [SerializeField]
-    private float _speed = 4.0f;
+    private float _speed = 2.5f;
     [SerializeField]
     private int _enemyHealth = 3;
     [SerializeField]

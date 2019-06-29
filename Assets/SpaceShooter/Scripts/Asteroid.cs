@@ -5,7 +5,7 @@ using UnityEngine;
 public class Asteroid : Destructible
 {
     [SerializeField]
-    private float _speed = 3.0f;
+    private float _speed = 2f;
     [SerializeField]
     private int _asteroidHealth = 3;
     [SerializeField]

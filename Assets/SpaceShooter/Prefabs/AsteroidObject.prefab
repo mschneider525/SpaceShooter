@@ -140,7 +140,7 @@ MonoBehaviour:
   _explosionLaserPrefab: {fileID: 2717299983345083304, guid: d3ceccb02cb695742898fef12d1c4668,
     type: 3}
   _explosionEnemyLaserPrefab: {fileID: 0}
-  _speed: 2.75
+  _speed: 2
   _asteroidHealth: 3
   _xPosition: 0
   _yPosition: 6.25
