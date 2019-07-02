@@ -210,7 +210,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameMode == "SinglePlayer")
         {
-            if (_uiManager.instructionsTop.text != "" && (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f))
+            if (_uiManager.instructionsTop.text != "" && (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f || Input.GetAxis("Horizontal2") != 0.0f || Input.GetAxis("Vertical2") != 0.0f))
             {
                 //StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
                 StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "W", "[W]"));
