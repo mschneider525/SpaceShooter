@@ -87,14 +87,14 @@ public class UI_Manager : MonoBehaviour
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "<sprite=\"PS4_Outlined\" name=\"JS Right\"> to move"));
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
 
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "[W]"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "8", "[8]"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "<sprite=\"PC_Outlined\" name=\"W\">"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "8", "<sprite=\"PC_Outlined\" name=\"8\">"));
             
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopLeft", "[A][S][D] to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleLeft", "[Space] to shoot"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopLeft", "<sprite=\"PC_Outlined\" name=\"A\"><sprite=\"PC_Outlined\" name=\"S\"><sprite=\"PC_Outlined\" name=\"D\"> to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleLeft", "<sprite=\"PC_Outlined\" name=\"SpaceBar\">to shoot"));
 
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "[4][5][6] to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "[0  ] to shoot"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "<sprite=\"PC_Outlined\" name=\"4\"><sprite=\"PC_Outlined\" name=\"5\"><sprite=\"PC_Outlined\" name=\"6\"> to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PC_Outlined\" name=\"0\"> to shoot"));
         }
 
         //StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"PS4_TouchPad\"> to pause"));
