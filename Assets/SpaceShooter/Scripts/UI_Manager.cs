@@ -70,10 +70,10 @@ public class UI_Manager : MonoBehaviour
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
 
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "[W]"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "O", "[O]"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "[A][S][D] or [K][L][ ; ] to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "[Space] or <sprite=\"Desktop\" name=\"Mouse Left\"> to shoot"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "<sprite=\"PC_Outlined\" name=\"W\">"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "O", "<sprite=\"PC_Outlined\" name=\"O\">"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PC_Outlined\" name=\"A\"><sprite=\"PC_Outlined\" name=\"S\"><sprite=\"PC_Outlined\" name=\"D\"> or <sprite=\"PC_Outlined\" name=\"K\"><sprite=\"PC_Outlined\" name=\"L\"><sprite=\"PC_Outlined\" name=\"SemiColon\"> to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PC_Outlined\" name=\"SpaceBar\"> or <sprite=\"PC_Outlined\" name=\"MouseLeft\"> to shoot"));
         }
         //SinglePlayerCo-op Instructions
         if (gameMode == "SinglePlayerCo-op")
@@ -98,7 +98,7 @@ public class UI_Manager : MonoBehaviour
         }
 
         //StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"PS4_TouchPad\"> to pause"));
-        StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "[P] to pause"));
+        StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PC_Outlined\" name=\"P\"> to pause"));
     }
 
     public void GameOver(string gameMode)
@@ -392,8 +392,8 @@ public class UI_Manager : MonoBehaviour
         //UpdateInstructionText("Middle", "<sprite=\"PS4_Outlined\" name=\"Cross\"> to play again");
         //UpdateInstructionText("Bottom", "<sprite=\"PS4_Outlined\" name=\"Circle\"> to return to the Main Menu");
 
-        UpdateInstructionText("Middle", "[Enter] to play again");
-        UpdateInstructionText("Bottom", "[M] to return to the Main Menu");
+        UpdateInstructionText("Middle", "<sprite=\"PC_Outlined\" name=\"Enter\"> to play again");
+        UpdateInstructionText("Bottom", "<sprite=\"PC_Outlined\" name=\"M\"> to return to the Main Menu");
     }
 
     public void Reset_HUD(string gameMode)

@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameOver == true)
         {
-            if ((Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.Return)) && _uiManager.instructionsMiddle.text != "")
+            if ((Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) && _uiManager.instructionsMiddle.text != "")
             {
                 StartGame();
             }
@@ -213,14 +213,14 @@ public class GameManager : MonoBehaviour
             if (_uiManager.instructionsTop.text != "" && (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f || Input.GetAxis("Horizontal2") != 0.0f || Input.GetAxis("Vertical2") != 0.0f))
             {
                 //StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
-                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "W", "[W]"));
-                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "O", "[O]"));
-                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Top", "[A][S][D] or [K][L][ ; ] to move"));
+                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "W", "<sprite=\"PC_Outlined\" name=\"W\">"));
+                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "O", "<sprite=\"PC_Outlined\" name=\"O\">"));
+                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Top", "<sprite=\"PC_Outlined\" name=\"A\"><sprite=\"PC_Outlined\" name=\"S\"><sprite=\"PC_Outlined\" name=\"D\"> or <sprite=\"PC_Outlined\" name=\"K\"><sprite=\"PC_Outlined\" name=\"L\"><sprite=\"PC_Outlined\" name=\"SemiColon\"> to move"));
             }
             if (_uiManager.instructionsMiddle.text != "" && (Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
             {
                 //StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
-                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Middle", "[Space] or <sprite=\"Desktop\" name=\"Mouse Left\"> to shoot"));
+                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Middle", "<sprite=\"PC_Outlined\" name=\"SpaceBar\"> or <sprite=\"PC_Outlined\" name=\"MouseLeft\"> to shoot"));
             }
 
             if (playerScript.playerLives == 0)
@@ -265,7 +265,7 @@ public class GameManager : MonoBehaviour
         if (_uiManager.instructionsBottom.text != "" && (Input.GetButtonDown("TouchPad") || Input.GetKeyDown(KeyCode.P)))
         {
             //StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.1f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"PS4_TouchPad\"> to pause"));
-            StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.1f, "Bottom", "[P] to pause"));
+            StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.1f, "Bottom", "<sprite=\"PC_Outlined\" name=\"P\"> to pause"));
         }
     }
 

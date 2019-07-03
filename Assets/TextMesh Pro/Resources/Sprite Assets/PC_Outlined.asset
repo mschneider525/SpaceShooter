@@ -1,0 +1,306 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
+  m_Name: PC_Outlined
+  m_EditorClassIdentifier: 
+  hashCode: 2049179656
+  material: {fileID: 21025450984651476}
+  materialHashCode: 0
+  spriteSheet: {fileID: 2800000, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  spriteInfoList:
+  - id: 0
+    x: 280
+    y: 499
+    width: 61
+    height: 59
+    xOffset: 46.5
+    yOffset: 36
+    xAdvance: 61
+    scale: 1
+    name: W
+    hashCode: 87
+    unicode: 0
+    pivot: {x: -30.5, y: 29.5}
+    sprite: {fileID: 21300004, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 1
+    x: 740
+    y: 498
+    width: 66
+    height: 60
+    xOffset: -33
+    yOffset: 34
+    xAdvance: 66
+    scale: 1
+    name: O
+    hashCode: 79
+    unicode: 0
+    pivot: {x: -33, y: 30}
+    sprite: {fileID: 21300014, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 2
+    x: 809
+    y: 497
+    width: 60
+    height: 63
+    xOffset: -1.8
+    yOffset: 51.85
+    xAdvance: 60
+    scale: 1
+    name: P
+    hashCode: 80
+    unicode: 0
+    pivot: {x: -30, y: 31.5}
+    sprite: {fileID: 21300000, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 3
+    x: 299
+    y: 435
+    width: 62
+    height: 59
+    xOffset: 9.3
+    yOffset: 48.4
+    xAdvance: 62
+    scale: 1
+    name: S
+    hashCode: 83
+    unicode: 0
+    pivot: {x: -31, y: 29.5}
+    sprite: {fileID: 21300008, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 4
+    x: 363
+    y: 435
+    width: 65
+    height: 59
+    xOffset: 5.1
+    yOffset: 48.9
+    xAdvance: 65
+    scale: 1
+    name: D
+    hashCode: 68
+    unicode: 0
+    pivot: {x: -32.5, y: 29.5}
+    sprite: {fileID: 21300010, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 5
+    x: 824
+    y: 435
+    width: 63
+    height: 58
+    xOffset: -7.6
+    yOffset: 47.28
+    xAdvance: 63
+    scale: 1
+    name: SemiColon
+    hashCode: 197837363
+    unicode: 0
+    pivot: {x: -31.5, y: 29}
+    sprite: {fileID: 21300020, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 6
+    x: 231
+    y: 434
+    width: 65
+    height: 62
+    xOffset: 13.4
+    yOffset: 51.5
+    xAdvance: 65
+    scale: 1
+    name: A
+    hashCode: 65
+    unicode: 0
+    pivot: {x: -32.5, y: 31}
+    sprite: {fileID: 21300006, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 7
+    x: 690
+    y: 434
+    width: 65
+    height: 62
+    xOffset: -2.9
+    yOffset: 51.39
+    xAdvance: 65
+    scale: 1
+    name: K
+    hashCode: 75
+    unicode: 0
+    pivot: {x: -32.5, y: 31}
+    sprite: {fileID: 21300016, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 8
+    x: 760
+    y: 432
+    width: 61
+    height: 61
+    xOffset: -4.5
+    yOffset: 48.1
+    xAdvance: 61
+    scale: 1
+    name: L
+    hashCode: 76
+    unicode: 0
+    pivot: {x: -30.5, y: 30.5}
+    sprite: {fileID: 21300018, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 9
+    x: 640
+    y: 367
+    width: 66
+    height: 61
+    xOffset: 2.6
+    yOffset: 50.3
+    xAdvance: 66
+    scale: 1
+    name: M
+    hashCode: 77
+    unicode: 0
+    pivot: {x: -33, y: 30.5}
+    sprite: {fileID: 21300012, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 10
+    x: 644
+    y: 303
+    width: 104
+    height: 61
+    xOffset: -9
+    yOffset: 49.37
+    xAdvance: 104
+    scale: 1
+    name: SpaceBar
+    hashCode: -1204287083
+    unicode: 0
+    pivot: {x: -52, y: 30.5}
+    sprite: {fileID: 21300032, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 11
+    x: 890
+    y: 218
+    width: 63
+    height: 63
+    xOffset: -31.5
+    yOffset: 31.5
+    xAdvance: 63
+    scale: 1
+    name: 8
+    hashCode: 56
+    unicode: 0
+    pivot: {x: -31.5, y: 31.5}
+    sprite: {fileID: 21300022, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 12
+    x: 824
+    y: 156
+    width: 61
+    height: 59
+    xOffset: -30.5
+    yOffset: 29.5
+    xAdvance: 61
+    scale: 1
+    name: 4
+    hashCode: 52
+    unicode: 0
+    pivot: {x: -30.5, y: 29.5}
+    sprite: {fileID: 21300024, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 13
+    x: 889
+    y: 154
+    width: 63
+    height: 61
+    xOffset: -31.5
+    yOffset: 30.5
+    xAdvance: 63
+    scale: 1
+    name: 5
+    hashCode: 53
+    unicode: 0
+    pivot: {x: -31.5, y: 30.5}
+    sprite: {fileID: 21300026, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 14
+    x: 955
+    y: 153
+    width: 64
+    height: 64
+    xOffset: -32
+    yOffset: 32
+    xAdvance: 64
+    scale: 1
+    name: 6
+    hashCode: 54
+    unicode: 0
+    pivot: {x: -32, y: 32}
+    sprite: {fileID: 21300028, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 15
+    x: 1024
+    y: 110
+    width: 60
+    height: 39
+    xOffset: -5.7
+    yOffset: 35.6
+    xAdvance: 60
+    scale: 1
+    name: Enter
+    hashCode: 78508072
+    unicode: 0
+    pivot: {x: -30, y: 19.5}
+    sprite: {fileID: 21300034, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 16
+    x: 111
+    y: 81
+    width: 106
+    height: 155
+    xOffset: -5.7
+    yOffset: 133.4
+    xAdvance: 106
+    scale: 1
+    name: MouseLeft
+    hashCode: -1477293638
+    unicode: 0
+    pivot: {x: -53, y: 77.5}
+    sprite: {fileID: 21300002, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  - id: 17
+    x: 822
+    y: 22
+    width: 131
+    height: 66
+    xOffset: -65.5
+    yOffset: 33
+    xAdvance: 131
+    scale: 1
+    name: 0
+    hashCode: 48
+    unicode: 0
+    pivot: {x: -65.5, y: 33}
+    sprite: {fileID: 21300030, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+  fallbackSpriteAssets: []
+--- !u!21 &21025450984651476
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TextMeshPro/Sprite
+  m_Shader: {fileID: 4800000, guid: cf81c85f95fe47e1a27f6ae460cf182c, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e5a757bb777d8cb489f454a44f0475d3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
