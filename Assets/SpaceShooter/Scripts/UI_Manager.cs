@@ -73,7 +73,7 @@ public class UI_Manager : MonoBehaviour
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "<sprite=\"PC\" name=\"W\">"));
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "O", "<sprite=\"PC\" name=\"O\">"));
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PC\" name=\"A\"><sprite=\"PC\" name=\"S\"><sprite=\"PC\" name=\"D\"> or <sprite=\"PC\" name=\"K\"><sprite=\"PC\" name=\"L\"><sprite=\"PC\" name=\"SemiColon\"> to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PC\" name=\"SpaceBar_Left\"><sprite=\"PC\" name=\"SpaceBar\"><sprite=\"PC\" name=\"SpaceBar_Right\"> or <sprite=\"PC\" name=\"MouseLeft\"> to shoot"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PC\" name=\"SpaceBar_Left\"><sprite=\"PC\" name=\"SpaceBar\"><sprite=\"PC\" name=\"SpaceBar_Right\"> or <sprite=\"Desktop\" name=\"Mouse Left\"> to shoot"));
         }
         //SinglePlayerCo-op Instructions
         if (gameMode == "SinglePlayerCo-op")
@@ -91,7 +91,7 @@ public class UI_Manager : MonoBehaviour
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "8", "<sprite=\"PC\" name=\"8\">"));
             
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopLeft", "<sprite=\"PC\" name=\"A\"><sprite=\"PC\" name=\"S\"><sprite=\"PC\" name=\"D\"> to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleLeft", "<sprite=\"PC\" name=\"SpaceBar_Left\"><sprite=\"PC\" name=\"SpaceBar\"><sprite=\"PC\" name=\"SpaceBar_Right\"> or <sprite=\"PC\" name=\"MouseLeft\"> to shoot"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleLeft", "<sprite=\"PC\" name=\"SpaceBar_Left\"><sprite=\"PC\" name=\"SpaceBar\"><sprite=\"PC\" name=\"SpaceBar_Right\"> to shoot"));
 
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "<sprite=\"PC\" name=\"4\"><sprite=\"PC\" name=\"5\"><sprite=\"PC\" name=\"6\"> to move"));
             StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PC\" name=\"0\"> to shoot"));

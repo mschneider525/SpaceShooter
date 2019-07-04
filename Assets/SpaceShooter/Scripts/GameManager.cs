@@ -220,7 +220,7 @@ public class GameManager : MonoBehaviour
             if (_uiManager.instructionsMiddle.text != "" && (Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
             {
                 //StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
-                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Middle", "<sprite=\"PC\" name=\"SpaceBar_Left\"><sprite=\"PC\" name=\"SpaceBar\"><sprite=\"PC\" name=\"SpaceBar_Right\"> or <sprite=\"PC\" name=\"MouseLeft\"> to shoot"));
+                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "Middle", "<sprite=\"PC\" name=\"SpaceBar_Left\"><sprite=\"PC\" name=\"SpaceBar\"><sprite=\"PC\" name=\"SpaceBar_Right\"> or <sprite=\"Desktop\" name=\"Mouse Left\"> to shoot"));
             }
 
             if (playerScript.playerLives == 0)
@@ -240,7 +240,7 @@ public class GameManager : MonoBehaviour
             if (_uiManager.instructionsMiddleLeft.text != "" && (Input.GetButtonDown("L2") || Input.GetKeyDown(KeyCode.Space)))
             {
                 //StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "MiddleLeft", "<sprite=\"PS4_Outlined\" name=\"L2\"> to shoot"));
-                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "MiddleLeft", "<sprite=\"PC\" name=\"SpaceBar_Left\"><sprite=\"PC\" name=\"SpaceBar\"><sprite=\"PC\" name=\"SpaceBar_Right\"> or <sprite=\"PC\" name=\"MouseLeft\"> to shoot"));
+                StartCoroutine(_uiManager.TimeLimitInstructions_Routine(0.5f, "MiddleLeft", "<sprite=\"PC\" name=\"SpaceBar_Left\"><sprite=\"PC\" name=\"SpaceBar\"><sprite=\"PC\" name=\"SpaceBar_Right\"> to shoot"));
             }
 
             //Player2
