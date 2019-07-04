@@ -775,7 +775,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: <sprite="PC_Outlined" name="SpaceBar"> to shoot
+  m_text: <sprite="PC" name="SpaceBar_Left"><sprite="PC" name="SpaceBar"><sprite="PC"
+    name="SpaceBar_Right"> to shoot
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -844,7 +845,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 412874617}
-    characterCount: 10
+    characterCount: 12
     spriteCount: 0
     spaceCount: 2
     wordCount: 3
@@ -935,7 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_Material: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -945,9 +946,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_spriteAsset: {fileID: 11400000, guid: 1f988e6d76ac6a2408bc5c626dd88748, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 0efe3858405f8634bb03113119e0180b, type: 2}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_sharedMaterial: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_isDefaultMaterial: 1
   m_padding: 0
@@ -2012,7 +2013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_Material: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2022,9 +2023,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_spriteAsset: {fileID: 11400000, guid: 1f988e6d76ac6a2408bc5c626dd88748, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 0efe3858405f8634bb03113119e0180b, type: 2}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_sharedMaterial: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_isDefaultMaterial: 1
   m_padding: 0
@@ -2094,7 +2095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -215, y: 52}
+  m_AnchoredPosition: {x: -203.5, y: 52}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &734888407
@@ -2117,7 +2118,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: <sprite="PC_Outlined" name="W">
+  m_text: <sprite="PC" name="W">
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2531,7 +2532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_Material: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2541,9 +2542,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_spriteAsset: {fileID: 11400000, guid: 1f988e6d76ac6a2408bc5c626dd88748, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 0efe3858405f8634bb03113119e0180b, type: 2}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_sharedMaterial: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_isDefaultMaterial: 1
   m_padding: 0
@@ -2683,7 +2684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_Material: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2693,9 +2694,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_spriteAsset: {fileID: 11400000, guid: 1f988e6d76ac6a2408bc5c626dd88748, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 0efe3858405f8634bb03113119e0180b, type: 2}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_sharedMaterial: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_isDefaultMaterial: 1
   m_padding: 0
@@ -2969,7 +2970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 125.31, y: 52}
+  m_AnchoredPosition: {x: 118.75, y: 52}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034674130
@@ -2992,7 +2993,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: <sprite="PC_Outlined" name="8">
+  m_text: <sprite="PC" name="8">
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3204,7 +3205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_Material: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -3214,9 +3215,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_spriteAsset: {fileID: 11400000, guid: 1f988e6d76ac6a2408bc5c626dd88748, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 0efe3858405f8634bb03113119e0180b, type: 2}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_sharedMaterial: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_isDefaultMaterial: 1
   m_padding: 0
@@ -3620,8 +3621,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: <sprite="PC_Outlined" name="A"><sprite="PC_Outlined" name="S"><sprite="PC_Outlined"
-    name="D"> to move
+  m_text: <sprite="PC" name="A"><sprite="PC" name="S"><sprite="PC" name="D"> to move
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3941,8 +3941,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: <sprite="PC_Outlined" name="4"><sprite="PC_Outlined" name="5"><sprite="PC_Outlined"
-    name="6"> to move
+  m_text: <sprite="PC" name="4"><sprite="PC" name="5"><sprite="PC" name="6"> to move
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4396,7 +4395,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: <sprite="PC_Outlined" name="P"> to pause
+  m_text: <sprite="PC" name="P"> to pause
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4550,7 +4549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_Material: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -4560,9 +4559,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_spriteAsset: {fileID: 11400000, guid: 1f988e6d76ac6a2408bc5c626dd88748, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 0efe3858405f8634bb03113119e0180b, type: 2}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_sharedMaterial: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_isDefaultMaterial: 1
   m_padding: 0
@@ -5438,7 +5437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_Material: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -5448,9 +5447,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_spriteAsset: {fileID: 11400000, guid: 1f988e6d76ac6a2408bc5c626dd88748, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 0efe3858405f8634bb03113119e0180b, type: 2}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 21025450984651476, guid: 1f988e6d76ac6a2408bc5c626dd88748,
+  m_sharedMaterial: {fileID: 21778074287448496, guid: 0efe3858405f8634bb03113119e0180b,
     type: 2}
   m_isDefaultMaterial: 1
   m_padding: 0
@@ -5973,7 +5972,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: <sprite="PC_Outlined" name="0"> to shoot
+  m_text: <sprite="PC" name="0"> to shoot
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

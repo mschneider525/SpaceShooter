@@ -20,6 +20,9 @@ TextureImporter:
     21300030: 0
     21300032: SpaceBar
     21300034: Enter
+    21300036: SpaceBar_Left
+    21300038: SpaceBar_Right
+    21300040: Enter_Bottom
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -138,10 +141,10 @@ TextureImporter:
       name: W
       rect:
         serializedVersion: 2
-        x: 280
-        y: 499
-        width: 61
-        height: 59
+        x: 283
+        y: 501
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,10 +161,10 @@ TextureImporter:
       name: A
       rect:
         serializedVersion: 2
-        x: 231
-        y: 434
-        width: 65
-        height: 62
+        x: 235
+        y: 437
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +181,10 @@ TextureImporter:
       name: S
       rect:
         serializedVersion: 2
-        x: 299
-        y: 435
-        width: 62
-        height: 59
+        x: 301
+        y: 437
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +201,10 @@ TextureImporter:
       name: D
       rect:
         serializedVersion: 2
-        x: 363
-        y: 435
-        width: 65
-        height: 59
+        x: 367
+        y: 437
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +221,10 @@ TextureImporter:
       name: P
       rect:
         serializedVersion: 2
-        x: 809
-        y: 497
-        width: 60
-        height: 63
+        x: 811
+        y: 501
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +241,10 @@ TextureImporter:
       name: M
       rect:
         serializedVersion: 2
-        x: 640
-        y: 367
-        width: 66
-        height: 61
+        x: 646
+        y: 372
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +261,10 @@ TextureImporter:
       name: O
       rect:
         serializedVersion: 2
-        x: 740
-        y: 498
-        width: 66
-        height: 60
+        x: 745
+        y: 501
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +281,10 @@ TextureImporter:
       name: K
       rect:
         serializedVersion: 2
-        x: 690
-        y: 434
-        width: 65
-        height: 62
+        x: 697
+        y: 437
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +301,10 @@ TextureImporter:
       name: L
       rect:
         serializedVersion: 2
-        x: 760
-        y: 432
-        width: 61
-        height: 61
+        x: 763
+        y: 437
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +321,10 @@ TextureImporter:
       name: SemiColon
       rect:
         serializedVersion: 2
-        x: 824
-        y: 435
-        width: 63
-        height: 58
+        x: 829
+        y: 437
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,10 +341,10 @@ TextureImporter:
       name: MouseLeft
       rect:
         serializedVersion: 2
-        x: 111
+        x: 115
         y: 81
-        width: 106
-        height: 155
+        width: 99
+        height: 153
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,10 +361,10 @@ TextureImporter:
       name: 8
       rect:
         serializedVersion: 2
-        x: 890
-        y: 218
-        width: 63
-        height: 63
+        x: 893
+        y: 222
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +381,10 @@ TextureImporter:
       name: 4
       rect:
         serializedVersion: 2
-        x: 824
-        y: 156
-        width: 61
-        height: 59
+        x: 827
+        y: 158
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,10 +401,10 @@ TextureImporter:
       name: 5
       rect:
         serializedVersion: 2
-        x: 889
-        y: 154
-        width: 63
-        height: 61
+        x: 893
+        y: 158
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,10 +421,10 @@ TextureImporter:
       name: 6
       rect:
         serializedVersion: 2
-        x: 955
-        y: 153
-        width: 64
-        height: 64
+        x: 959
+        y: 158
+        width: 55
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -438,10 +441,10 @@ TextureImporter:
       name: 0
       rect:
         serializedVersion: 2
-        x: 822
-        y: 22
-        width: 131
-        height: 66
+        x: 827
+        y: 28
+        width: 122
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -459,9 +462,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 644
-        y: 303
-        width: 104
-        height: 61
+        y: 307
+        width: 103
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,10 +481,10 @@ TextureImporter:
       name: Enter
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 110
-        width: 60
-        height: 39
+        x: 1027
+        y: 114
+        width: 55
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -490,6 +493,66 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8643c2a8d14d08f4692d7b1e08af3320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBar_Left
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 307
+        width: 11
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84db2d7ad2263934d8c9e1e1455ee93a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBar_Right
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 307
+        width: 11
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce6766c63ea838499f712fb217a7ce6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enter_Bottom
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 30
+        width: 55
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb45959fd1f4b67409be03875ac767c8
       vertices: []
       indices: 
       edges: []

@@ -70,10 +70,10 @@ public class UI_Manager : MonoBehaviour
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PS4_Outlined\" name=\"JS Left\"> to move"));
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
 
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "<sprite=\"PC_Outlined\" name=\"W\">"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "O", "<sprite=\"PC_Outlined\" name=\"O\">"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PC_Outlined\" name=\"A\"><sprite=\"PC_Outlined\" name=\"S\"><sprite=\"PC_Outlined\" name=\"D\"> or <sprite=\"PC_Outlined\" name=\"K\"><sprite=\"PC_Outlined\" name=\"L\"><sprite=\"PC_Outlined\" name=\"SemiColon\"> to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PC_Outlined\" name=\"SpaceBar\"> or <sprite=\"PC_Outlined\" name=\"MouseLeft\"> to shoot"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "<sprite=\"PC\" name=\"W\">"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "O", "<sprite=\"PC\" name=\"O\">"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Top", "<sprite=\"PC\" name=\"A\"><sprite=\"PC\" name=\"S\"><sprite=\"PC\" name=\"D\"> or <sprite=\"PC\" name=\"K\"><sprite=\"PC\" name=\"L\"><sprite=\"PC\" name=\"SemiColon\"> to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "Middle", "<sprite=\"PC\" name=\"SpaceBar_Left\"><sprite=\"PC\" name=\"SpaceBar\"><sprite=\"PC\" name=\"SpaceBar_Right\"> or <sprite=\"PC\" name=\"MouseLeft\"> to shoot"));
         }
         //SinglePlayerCo-op Instructions
         if (gameMode == "SinglePlayerCo-op")
@@ -87,18 +87,18 @@ public class UI_Manager : MonoBehaviour
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "<sprite=\"PS4_Outlined\" name=\"JS Right\"> to move"));
             //StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PS4_Outlined\" name=\"R2\"> to shoot"));
 
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "<sprite=\"PC_Outlined\" name=\"W\">"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "8", "<sprite=\"PC_Outlined\" name=\"8\">"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "W", "<sprite=\"PC\" name=\"W\">"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "8", "<sprite=\"PC\" name=\"8\">"));
             
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopLeft", "<sprite=\"PC_Outlined\" name=\"A\"><sprite=\"PC_Outlined\" name=\"S\"><sprite=\"PC_Outlined\" name=\"D\"> to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleLeft", "<sprite=\"PC_Outlined\" name=\"SpaceBar\">to shoot"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopLeft", "<sprite=\"PC\" name=\"A\"><sprite=\"PC\" name=\"S\"><sprite=\"PC\" name=\"D\"> to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleLeft", "<sprite=\"PC\" name=\"SpaceBar_Left\"><sprite=\"PC\" name=\"SpaceBar\"><sprite=\"PC\" name=\"SpaceBar_Right\"> or <sprite=\"PC\" name=\"MouseLeft\"> to shoot"));
 
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "<sprite=\"PC_Outlined\" name=\"4\"><sprite=\"PC_Outlined\" name=\"5\"><sprite=\"PC_Outlined\" name=\"6\"> to move"));
-            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PC_Outlined\" name=\"0\"> to shoot"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "TopRight", "<sprite=\"PC\" name=\"4\"><sprite=\"PC\" name=\"5\"><sprite=\"PC\" name=\"6\"> to move"));
+            StartCoroutine(TimeLimitInstructions_Routine(5.0f, "MiddleRight", "<sprite=\"PC\" name=\"0\"> to shoot"));
         }
 
         //StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PS4_TouchPad\" name=\"PS4_TouchPad\"> to pause"));
-        StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PC_Outlined\" name=\"P\"> to pause"));
+        StartCoroutine(TimeLimitInstructions_Routine(3.0f, "Bottom", "<sprite=\"PC\" name=\"P\"> to pause"));
     }
 
     public void GameOver(string gameMode)
@@ -392,8 +392,8 @@ public class UI_Manager : MonoBehaviour
         //UpdateInstructionText("Middle", "<sprite=\"PS4_Outlined\" name=\"Cross\"> to play again");
         //UpdateInstructionText("Bottom", "<sprite=\"PS4_Outlined\" name=\"Circle\"> to return to the Main Menu");
 
-        UpdateInstructionText("Middle", "<sprite=\"PC_Outlined\" name=\"Enter\"> to play again");
-        UpdateInstructionText("Bottom", "<sprite=\"PC_Outlined\" name=\"M\"> to return to the Main Menu");
+        UpdateInstructionText("Middle", "<sprite=\"PC\" name=\"Enter\"><sprite=\"PC\" name=\"Enter_Bottom\"> to play again");
+        UpdateInstructionText("Bottom", "<sprite=\"PC\" name=\"M\"> to return to the Main Menu");
     }
 
     public void Reset_HUD(string gameMode)
